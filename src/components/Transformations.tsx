@@ -15,8 +15,8 @@ export default function Transformations() {
       age: 32,
       duration: '90 Dias',
       metric: 'Menos 11,8 kg (Gordura corporal: 22% para 11,5%)',
-      beforeImg: 'https://picsum.photos/seed/fitness-marcus-before/500/600?blur=6',
-      afterImg: 'https://picsum.photos/seed/fitness-marcus-after/500/600',
+      beforeImg: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=355&h=473&q=40&sat=-60',
+      afterImg: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=355&h=473&q=70',
       beforeValue: '97,5 kg',
       afterValue: '85,7 kg',
       quote: "A periodização biomecânica do Wandri salvou meus joelhos. Eliminei quase 12 kg de gordura corporal resistente enquanto batia recordes históricos de força nos meus levantamentos.",
@@ -28,8 +28,8 @@ export default function Transformations() {
       age: 28,
       duration: '12 Semanas',
       metric: 'Perdeu 8,1 kg de Gordura Pura e Definiu o Corpo',
-      beforeImg: 'https://picsum.photos/seed/fitness-sarah-before/500/600?blur=5',
-      afterImg: 'https://picsum.photos/seed/fitness-sarah-after/500/600',
+      beforeImg: 'https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=355&h=473&q=40&sat=-60',
+      afterImg: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=355&h=473&q=70',
       beforeValue: '71,6 kg',
       afterValue: '63,5 kg',
       quote: "Sem restrições absurdas de doces, apenas parâmetros e calorias sob medida. Os feedbacks regulares sobre a execução dos meus treinos me deram uma autoconfiança indescritível.",
@@ -41,8 +41,8 @@ export default function Transformations() {
       age: 29,
       duration: '90 Dias',
       metric: 'Ganhou 6,3 kg de Massa Magra Densa',
-      beforeImg: 'https://picsum.photos/seed/fitness-alex-before/500/600?blur=7',
-      afterImg: 'https://picsum.photos/seed/fitness-alex-after/500/600',
+      beforeImg: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=355&h=473&q=40&sat=-60',
+      afterImg: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=355&h=473&q=70',
       beforeValue: '73,4 kg',
       afterValue: '79,7 kg',
       quote: "Eu passei anos comendo tudo o que via pela frente sem ver resultados densos. O Wandri organizou minhas janelas de descanso e nutrientes. Mudança total de patamar.",
@@ -54,8 +54,8 @@ export default function Transformations() {
       age: 33,
       duration: '90 Dias',
       metric: 'Menos 13% de Gordura Corporal e Abdômen Definido',
-      beforeImg: 'https://picsum.photos/seed/fitness-jessica-before/500/600?blur=6',
-      afterImg: 'https://picsum.photos/seed/fitness-jessica-after/500/600',
+      beforeImg: 'https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=355&h=473&q=40&sat=-60',
+      afterImg: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=355&h=473&q=70',
       beforeValue: '29% GC',
       afterValue: '16% GC',
       quote: "Os treinos dinâmicos se adaptaram de forma excepcional à minha rotina pesada de viagens corporativas. O acompanhamento diário me blindou das recaídas. Melhor decisão que já tomei.",
@@ -104,7 +104,7 @@ export default function Transformations() {
   return (
     <section 
       id="results_section" 
-      className="relative py-14 sm:py-20 bg-[#080808] border-b border-white/[0.03] overflow-hidden"
+      className="relative py-14 sm:py-20 bg-[#060606] border-b border-white/10 overflow-hidden"
     >
       {/* Background visual spotlight */}
       <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-neon-green/3 blur-[120px] rounded-full pointer-events-none" />

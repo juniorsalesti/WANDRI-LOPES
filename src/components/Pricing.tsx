@@ -35,7 +35,7 @@ export default function Pricing({ onOpenAssessment }: PricingProps) {
   return (
     <section 
       id="pricing_section" 
-      className="relative py-14 sm:py-20 md:py-24 bg-neutral-950/40 border-y border-white/[0.03] overflow-hidden"
+      className="relative py-14 sm:py-20 md:py-24 bg-neutral-950/75 border-y border-white/10 overflow-hidden"
     >
       {/* Background spotlights */}
       <div className="absolute top-[40%] right-[-10%] w-[350px] h-[350px] bg-neon-green/3 blur-[120px] rounded-full pointer-events-none" />

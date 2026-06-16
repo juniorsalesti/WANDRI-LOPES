@@ -36,7 +36,7 @@ export default function WhyChooseMe() {
   return (
     <section 
       id="why_choose_me_section" 
-      className="relative py-12 sm:py-20 md:py-24 bg-[#080808] border-b border-white/[0.03]"
+      className="relative py-12 sm:py-20 md:py-24 bg-[#060606] border-b border-white/10"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         

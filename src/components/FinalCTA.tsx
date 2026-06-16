@@ -9,7 +9,7 @@ export default function FinalCTA({ onOpenAssessment }: FinalCTAProps) {
   return (
     <section 
       id="final_cta_section" 
-      className="relative py-14 sm:py-20 md:py-24 bg-[#080808] border-b border-white/[0.03] overflow-hidden"
+      className="relative py-14 sm:py-20 md:py-24 bg-[#050505] border-b border-white/10 overflow-hidden"
     >
       {/* Background neon ambient glows */}
       <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[550px] h-[300px] bg-neon-green/5 blur-[120px] rounded-full pointer-events-none" />

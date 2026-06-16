@@ -24,7 +24,7 @@ export default function AboutCoach() {
   return (
     <section 
       id="about_coach_section" 
-      className="relative py-14 sm:py-20 md:py-24 bg-[#080808] border-b border-white/[0.03] overflow-hidden"
+      className="relative py-14 sm:py-20 md:py-24 bg-[#060606] border-b border-white/10 overflow-hidden"
     >
       {/* Background neon elements */}
       <div className="absolute top-[20%] left-[-10%] w-[350px] h-[350px] bg-neon-green/3 blur-[120px] rounded-full pointer-events-none" />
