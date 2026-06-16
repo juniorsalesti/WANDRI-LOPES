@@ -36,25 +36,25 @@ export default function HowItWorks() {
   return (
     <section 
       id="timeline_section" 
-      className="relative py-14 sm:py-20 md:py-24 bg-neutral-950/70 border-y border-white/10 overflow-hidden"
+      className="relative py-16 sm:py-24 bg-[#F9FAFB] border-y border-neutral-200 overflow-hidden"
     >
-      {/* Background radial spotlights */}
-      <div className="absolute top-[50%] right-[-10%] w-[350px] h-[350px] bg-neon-green/3 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-[10%] left-[-10%] w-[300px] h-[300px] bg-neon-green/3 blur-[110px] rounded-full pointer-events-none" />
+      {/* Background soft ambient glows */}
+      <div className="absolute top-[50%] right-[-10%] w-[350px] h-[350px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-[10%] left-[-10%] w-[300px] h-[300px] bg-blue-400/5 blur-[110px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neon-green/10 border border-neon-green/20">
-            <Compass className="w-3.5 h-3.5 text-neon-green" />
-            <span className="text-[10px] md:text-xs font-mono font-bold tracking-widest text-neon-green uppercase">DETERMINADO MATEMATICAMENTE</span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 shadow-sm">
+            <Compass className="w-3.5 h-3.5 text-blue-600" />
+            <span className="text-[10px] md:text-xs font-mono font-bold tracking-widest text-blue-700 uppercase">DETERMINADO MATEMATICAMENTE</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white uppercase">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-900 uppercase">
             Como o Sistema <br className="hidden sm:inline" />
-            <span className="text-gradient-neon font-black">Funciona Na Prática</span>
+            <span className="bg-gradient-to-r from-neutral-950 to-blue-600 bg-clip-text text-transparent font-black">Funciona Na Prática</span>
           </h2>
-          <p className="text-neutral-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+          <p className="text-neutral-600 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
             Quatro fases coordenadas de forma inteligente para unir segurança mecânica, picos hormonais naturais e resultados definitivos à prova de desculpas.
           </p>
         </div>
@@ -63,10 +63,10 @@ export default function HowItWorks() {
         <div className="relative pt-6 max-w-5xl mx-auto">
           
           {/* Central vertical line for desktop */}
-          <div className="absolute left-[50%] -translate-x-1/2 top-4 bottom-12 w-[2px] bg-white/[0.05] hidden lg:block">
+          <div className="absolute left-[50%] -translate-x-1/2 top-4 bottom-12 w-[2px] bg-neutral-200 hidden lg:block">
             {/* Active glowing timeline bar filler */}
             <div 
-              className="w-full bg-neon-green shadow-[0_0_12px_#38F2A3] transition-all duration-500 rounded-full" 
+              className="w-full bg-blue-600 shadow-[0_0_8px_rgba(37,99,235,0.2)] transition-all duration-500 rounded-full" 
               style={{ height: `${(activeStep / (steps.length - 1)) * 100}%` }}
             />
           </div>
@@ -86,41 +86,41 @@ export default function HowItWorks() {
                   }`}
                 >
                   {/* Central glowing target node */}
-                  <div className="absolute left-[50%] -translate-x-1/2 top-10 w-8 h-8 rounded-full border border-white/10 bg-[#080808] z-20 hidden lg:flex items-center justify-center transition-all duration-300">
+                  <div className="absolute left-[50%] -translate-x-1/2 top-10 w-8 h-8 rounded-full border border-neutral-200 bg-white z-20 hidden lg:flex items-center justify-center transition-all duration-300">
                     <div className={`w-3.5 h-3.5 rounded-full transition-all duration-300 ${
-                      isActive ? 'bg-neon-green shadow-[0_0_10px_#38F2A3] scale-110' : 'bg-neutral-800'
+                      isActive ? 'bg-blue-600 shadow-[0_0_8px_rgba(37,99,235,0.3)] scale-110' : 'bg-neutral-300'
                     }`} />
                   </div>
 
                   {/* Left Column (Card Panel) */}
                   <div className="w-full lg:w-[45%] text-left relative z-10">
                     <div 
-                      className={`p-6 md:p-8 rounded-2xl glass-panel text-left relative transition-all duration-300 border ${
+                      className={`p-6 md:p-8 rounded-2xl text-left relative transition-all duration-300 border ${
                         isActive 
-                          ? 'border-neon-green/45 bg-gradient-to-br from-neon-green/[3%] to-transparent shadow-xl' 
-                          : 'border-white/5 hover:border-white/10'
+                          ? 'border-[#2563eb] bg-white shadow-xl shadow-blue-500/5' 
+                          : 'border-neutral-200/80 bg-white hover:border-blue-300/60 shadow-[0_4px_25px_rgba(0,0,0,0.02)]'
                       }`}
                     >
                       {/* Top floating phase identification */}
                       <div className="flex justify-between items-center mb-4">
-                        <span className="font-mono text-3xl font-black text-neon-green leading-none">
+                        <span className="font-mono text-3.5xl font-black text-blue-600 leading-none">
                           {item.step}
                         </span>
-                        <div className="p-2 bg-white/5 rounded-lg text-neon-green">
-                          {idx === 0 && <Cpu className="w-5 h-5 text-neon-green" />}
-                          {idx === 1 && <Sparkles className="w-5 h-5 text-neon-green" />}
-                          {idx === 2 && <Sliders className="w-5 h-5 text-neon-green" />}
-                          {idx === 3 && <Headset className="w-5 h-5 text-neon-green" />}
+                        <div className="p-2 bg-blue-50 rounded-lg text-blue-600">
+                          {idx === 0 && <Cpu className="w-5 h-5 text-blue-600" />}
+                          {idx === 1 && <Sparkles className="w-5 h-5 text-blue-600" />}
+                          {idx === 2 && <Sliders className="w-5 h-5 text-blue-600" />}
+                          {idx === 3 && <Headset className="w-5 h-5 text-blue-600" />}
                         </div>
                       </div>
 
-                      <span className="text-[10px] md:text-xs font-mono text-neutral-400 font-bold uppercase tracking-wider block">
+                      <span className="text-[10px] md:text-xs font-mono text-neutral-500 font-bold uppercase tracking-wider block">
                         {item.subtitle}
                       </span>
-                      <h3 className="font-display text-xl sm:text-2xl font-extrabold text-white uppercase tracking-tight mt-1 group-hover:text-neon-green transition-colors">
+                      <h3 className="font-display text-xl sm:text-2xl font-extrabold text-neutral-900 uppercase tracking-tight mt-1 transition-colors">
                         {item.title}
                       </h3>
-                      <p className="text-neutral-400 text-xs md:text-sm leading-relaxed mt-3">
+                      <p className="text-neutral-600 text-xs md:text-sm leading-relaxed mt-3">
                         {item.description}
                       </p>
                     </div>

@@ -60,24 +60,25 @@ export default function Benefits() {
   return (
     <section 
       id="benefits_section" 
-      className="relative py-14 sm:py-20 bg-neutral-950/60 border-y border-white/10 overflow-hidden"
+      className="relative py-16 sm:py-24 bg-[#F9FAFB] border-y border-neutral-200 overflow-hidden"
     >
-      {/* Background soft lighting */}
-      <div className="absolute top-[20%] right-[-10%] w-[350px] h-[350px] bg-neon-green/3 blur-[120px] rounded-full pointer-events-none" />
+      {/* Background soft ambient lighting */}
+      <div className="absolute top-[25%] right-[-10%] w-[350px] h-[350px] bg-[#2563eb]/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-[10%] left-[-5%] w-[250px] h-[250px] bg-[#2563eb]/5 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neon-green/10 border border-neon-green/20">
-            <Zap className="w-3.5 h-3.5 text-neon-green" />
-            <span className="text-[10px] md:text-xs font-mono font-bold tracking-widest text-neon-green uppercase">ECOSSISTEMA COMPLETO DE TRANSFORMAÇÃO</span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 shadow-sm">
+            <Zap className="w-3.5 h-3.5 text-blue-600" />
+            <span className="text-[10px] md:text-xs font-mono font-bold tracking-widest text-blue-700 uppercase">ECOSSISTEMA COMPLETO DE TRANSFORMAÇÃO</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white uppercase">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-900 uppercase">
             Tudo o Que Você Precisa <br className="hidden sm:inline" />
-            <span className="text-gradient-neon font-black">Para Avançar</span>
+            <span className="bg-gradient-to-r from-neutral-950 to-[#2563eb] bg-clip-text text-transparent font-black">Para Avançar</span>
           </h2>
-          <p className="text-neutral-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+          <p className="text-neutral-600 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
             Elimine as tentativas fracassadas. Esse método une fisiologia, musculação inteligente e responsabilidade diária para lapidar sua melhor versão.
           </p>
         </div>
@@ -92,19 +93,19 @@ export default function Benefits() {
                 id={`benefit_card_${benefit.id}`}
                 key={benefit.id}
                 onClick={() => setActiveCard(isExpanded ? null : benefit.id)}
-                className={`group text-left p-6 md:p-8 rounded-2xl glass-panel relative cursor-pointer overflow-hidden transition-all duration-300 border ${
+                className={`group text-left p-6 md:p-8 rounded-2xl relative cursor-pointer overflow-hidden transition-all duration-300 border ${
                   isExpanded 
-                    ? 'border-neon-green bg-gradient-to-br from-neon-green/[0.04] to-transparent shadow-lg shadow-neon-green/5' 
-                    : 'border-white/5 hover:border-white/10 hover:bg-white/[0.03] hover:shadow-xl'
+                    ? 'border-[#2563eb] bg-white shadow-xl shadow-blue-500/5' 
+                    : 'border-neutral-200/80 bg-white hover:border-blue-400/50 hover:bg-neutral-50/50 shadow-[0_4px_25px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_35px_rgba(0,0,0,0.06)]'
                 }`}
               >
                 {/* Subtle spotlight glow effect on card hover */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-neon-green/10 blur-[40px] rounded-full transition-opacity group-hover:opacity-100 opacity-60 pointer-events-none" />
+                <div className="absolute top-0 right-0 w-24 h-24 bg-[#2563eb]/5 blur-[40px] rounded-full transition-opacity group-hover:opacity-100 opacity-60 pointer-events-none" />
 
                 {/* Card Header */}
                 <div className="flex items-start gap-4 md:gap-5">
                   <div className={`p-4 rounded-xl transition-all font-bold ${
-                    isExpanded ? 'bg-neon-green text-black scale-105 shadow-md shadow-neon-green/25' : 'bg-white/5 text-neon-green'
+                    isExpanded ? 'bg-[#2563eb] text-white scale-105 shadow-md shadow-blue-500/25' : 'bg-blue-50 text-blue-600'
                   }`}>
                     {benefit.id === 'training' && <Dumbbell className="w-6 h-6" />}
                     {benefit.id === 'nutrition' && <Apple className="w-6 h-6" />}
@@ -113,27 +114,27 @@ export default function Benefits() {
                   </div>
 
                   <div className="space-y-1.5 flex-1">
-                    <span className="text-[10px] font-mono text-neon-green uppercase tracking-widest font-extrabold">
+                    <span className="text-[10px] font-mono text-blue-600 uppercase tracking-widest font-extrabold">
                       {benefit.metricHeadline}
                     </span>
-                    <h3 className="font-display font-black text-white text-lg md:text-xl uppercase tracking-tight group-hover:text-neon-green transition-colors">
+                    <h3 className="font-display font-black text-neutral-900 text-lg md:text-xl uppercase tracking-tight group-hover:text-blue-600 transition-colors">
                       {benefit.title}
                     </h3>
                   </div>
                 </div>
 
                 {/* Short Paragraph Description */}
-                <p className="mt-4 text-neutral-400 text-xs md:text-sm leading-relaxed">
+                <p className="mt-4 text-neutral-600 text-xs md:text-sm leading-relaxed">
                   {benefit.description}
                 </p>
 
                 {/* Deliverables accordion button indicators */}
-                <div className="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
-                  <span className="text-[10px] font-mono text-neutral-500 uppercase tracking-wider">
+                <div className="mt-4 pt-4 border-t border-neutral-150 flex items-center justify-between">
+                  <span className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider">
                     {isExpanded ? 'Ocultar detalhes técnicos' : 'Toque para ver a entrega detalhada'}
                   </span>
-                  <div className={`p-1 rounded-full border border-white/10 transition-transform ${
-                    isExpanded ? 'rotate-180 bg-neon-green/10 text-neon-green border-neon-green/20' : 'text-neutral-400'
+                  <div className={`p-1 rounded-full border border-neutral-200 transition-transform ${
+                    isExpanded ? 'rotate-180 bg-blue-50 text-[#2563eb] border-blue-200' : 'text-neutral-500 bg-neutral-50'
                   }`}>
                     <ChevronDown className="w-4 h-4" />
                   </div>
@@ -141,10 +142,10 @@ export default function Benefits() {
 
                 {/* Expanding subitems list */}
                 {isExpanded && (
-                  <div className="mt-4 space-y-2.5 bg-black/40 rounded-xl p-4 border border-white/5">
+                  <div className="mt-4 space-y-2.5 bg-neutral-50/70 rounded-xl p-4 border border-neutral-150">
                     {benefit.details.map((subitem, index) => (
-                      <div key={index} className="flex items-start gap-2 text-xs text-neutral-300">
-                        <div className="p-0.5 rounded-full bg-neon-green/10 text-neon-green shrink-0 mt-0.5">
+                      <div key={index} className="flex items-start gap-2 text-xs text-neutral-700">
+                        <div className="p-0.5 rounded-full bg-blue-50 text-blue-600 shrink-0 mt-0.5">
                           <Check className="w-3 h-3 stroke-[3]" />
                         </div>
                         <span className="leading-tight">{subitem}</span>

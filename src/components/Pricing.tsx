@@ -35,39 +35,39 @@ export default function Pricing({ onOpenAssessment }: PricingProps) {
   return (
     <section 
       id="pricing_section" 
-      className="relative py-14 sm:py-20 md:py-24 bg-neutral-950/75 border-y border-white/10 overflow-hidden"
+      className="relative py-16 sm:py-24 bg-white border-y border-neutral-200 overflow-hidden"
     >
-      {/* Background spotlights */}
-      <div className="absolute top-[40%] right-[-10%] w-[350px] h-[350px] bg-neon-green/3 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-[20%] left-[-15%] w-[400px] h-[400px] bg-neon-green/3 blur-[140px] rounded-full pointer-events-none" />
+      {/* Background soft ambient lights */}
+      <div className="absolute top-[40%] right-[-10%] w-[350px] h-[350px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-[20%] left-[-15%] w-[400px] h-[400px] bg-blue-400/5 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neon-green/10 border border-neon-green/20">
-            <Star className="w-3.5 h-3.5 text-neon-green" />
-            <span className="text-[10px] md:text-xs font-mono font-bold tracking-widest text-neon-green uppercase">PLANOS EXCLUSIVOS DE EVOLUÇÃO</span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 shadow-sm">
+            <Star className="w-3.5 h-3.5 text-blue-600" />
+            <span className="text-[10px] md:text-xs font-mono font-bold tracking-widest text-blue-700 uppercase">PLANOS EXCLUSIVOS DE EVOLUÇÃO</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white uppercase">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-900 uppercase">
             GARANTA SEU LUGAR NO <br className="hidden sm:inline" />
-            <span className="text-gradient-neon font-black font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">GRUPO DE PERFORMANCE</span>
+            <span className="bg-gradient-to-r from-neutral-950 to-blue-600 bg-clip-text text-transparent font-black">GRUPO DE PERFORMANCE</span>
           </h2>
-          <p className="text-neutral-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+          <p className="text-neutral-600 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
             O coach Wandri Lopes trabalha apenas com turmas limitadas de alunos ativos simultâneos para manter o foco individualizado. Escolha o plano ideal abaixo:
           </p>
         </div>
 
         {/* Binary Toggler Block (Monthly vs 90-Day Package) */}
         <div className="flex flex-col items-center justify-center gap-3 mb-16">
-          <div className="glass-panel p-1 rounded-xl border border-white/5 inline-flex items-center">
+          <div className="bg-neutral-50 p-1 rounded-xl border border-neutral-200 inline-flex items-center shadow-sm">
             <button
               id="pricing_toggle_monthly"
               onClick={() => setBillingCycle('monthly')}
               className={`py-2 px-5 rounded-lg font-display font-bold text-xs tracking-widest uppercase cursor-pointer transition-all ${
                 billingCycle === 'monthly' 
-                  ? 'bg-neutral-800 text-white' 
-                  : 'text-neutral-400 hover:text-white'
+                  ? 'bg-blue-600 text-white shadow-sm' 
+                  : 'text-neutral-500 hover:text-neutral-900'
               }`}
             >
               Ciclo Mensal
@@ -77,14 +77,14 @@ export default function Pricing({ onOpenAssessment }: PricingProps) {
               onClick={() => setBillingCycle('quarterly')}
               className={`py-2 px-5 rounded-lg font-display font-bold text-xs tracking-widest uppercase cursor-pointer transition-all flex items-center gap-1.5 ${
                 billingCycle === 'quarterly' 
-                  ? 'bg-neon-green text-black' 
-                  : 'text-neutral-400 hover:text-white'
+                  ? 'bg-blue-600 text-white shadow-sm' 
+                  : 'text-neutral-500 hover:text-neutral-900'
               }`}
             >
-              Ciclo Trimestral <span className="text-[9px] bg-black/10 text-black px-1.5 py-0.5 rounded uppercase font-black font-mono">Economize 20%</span>
+              Ciclo Trimestral <span className="text-[9px] bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded uppercase font-black font-mono">Economize 20%</span>
             </button>
           </div>
-          <p className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">
+          <p className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest text-center">
             *O plano de 90 dias é expressamente recomendado para estabilização metabólica e muscular completa
           </p>
         </div>
@@ -95,27 +95,27 @@ export default function Pricing({ onOpenAssessment }: PricingProps) {
           {/* Card 2: STANDARD COACHING (left, simpler) */}
           <div 
             id="plan_card_standard" 
-            className="lg:col-span-5 rounded-2xl glass-panel border border-white/5 p-6 md:p-8 flex flex-col justify-between hover:border-white/10 transition-all duration-300 relative text-left"
+            className="lg:col-span-5 rounded-2xl border border-neutral-200 bg-white p-6 md:p-8 flex flex-col justify-between hover:border-blue-400/40 shadow-[0_4px_25px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_35px_rgba(0,0,0,0.05)] transition-all duration-300 relative text-left"
           >
             <div className="space-y-6">
               
               <div className="space-y-2">
-                <span className="text-[10px] font-mono text-neutral-400 tracking-wider uppercase font-bold block">
+                <span className="text-[10px] font-mono text-neutral-500 tracking-wider uppercase font-bold block">
                   ACOMPANHAMENTO BÁSICO
                 </span>
-                <h3 className="font-display text-2xl font-black text-white uppercase tracking-tight">
+                <h3 className="font-display text-2xl font-black text-neutral-900 uppercase tracking-tight">
                   Plano Standard
                 </h3>
-                <p className="text-xs text-neutral-400 leading-normal">
+                <p className="text-xs text-neutral-600 leading-normal">
                   Ideal para iniciantes ou intermediários disciplinados que precisam de uma direção profissional clara e avaliações pontuais de progresso.
                 </p>
               </div>
 
               {/* Price */}
-              <div className="py-4 border-y border-white/5 space-y-1">
+              <div className="py-4 border-y border-neutral-150 space-y-1">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-extrabold font-mono text-white select-none">{standardMonthlyEquivalent}</span>
-                  <span className="text-xs text-neutral-400 font-mono">/ MÊS</span>
+                  <span className="text-4xl font-extrabold font-mono text-neutral-900 select-none">{standardMonthlyEquivalent}</span>
+                  <span className="text-xs text-neutral-500 font-mono">/ MÊS</span>
                 </div>
                 <span className="text-[11px] text-neutral-500 font-sans block font-medium">
                   {standardBilledText}
@@ -128,12 +128,12 @@ export default function Pricing({ onOpenAssessment }: PricingProps) {
                 <div className="space-y-3">
                   {standardFeatures.map((f, idx) => (
                     <div key={idx} className="flex gap-2.5 items-start">
-                      <div className="p-0.5 rounded-full bg-white/10 text-white shrink-0 mt-0.5">
+                      <div className="p-0.5 rounded-full bg-neutral-100 text-neutral-700 shrink-0 mt-0.5">
                         <Check className="w-3.5 h-3.5" />
                       </div>
                       <div className="text-left">
-                        <span className="text-xs text-neutral-200 block font-medium leading-tight">{f.text}</span>
-                        <p className="text-[10px] text-neutral-500 mt-0.5 leading-normal">{f.subText}</p>
+                        <span className="text-xs text-neutral-900 block font-medium leading-tight">{f.text}</span>
+                        <p className="text-[10px] text-neutral-550 mt-0.5 leading-normal">{f.subText}</p>
                       </div>
                     </div>
                   ))}
@@ -149,7 +149,7 @@ export default function Pricing({ onOpenAssessment }: PricingProps) {
                 href="https://wa.me/5511999999999?text=Ol%C3%A1%20Wandri%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20Standard%21"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3.5 rounded-xl border border-white/15 hover:border-white/30 text-white font-display font-extrabold text-sm uppercase tracking-wider transition-all hover:bg-white/[0.02] cursor-pointer block text-center"
+                className="w-full py-3.5 rounded-xl border border-neutral-250 hover:border-neutral-400 hover:bg-neutral-50/50 text-neutral-800 font-display font-extrabold text-sm uppercase tracking-wider transition-all cursor-pointer block text-center"
               >
                 Candidatar-se à Vaga Standard
               </a>
@@ -160,10 +160,10 @@ export default function Pricing({ onOpenAssessment }: PricingProps) {
           {/* Card 1: PREMIUM COACHING (right, highly glowing, featured) */}
           <div 
             id="plan_card_premium" 
-            className="lg:col-span-7 rounded-3xl glass-panel-heavy border border-neon-green/40 p-6 md:p-10 flex flex-col justify-between hover:border-neon-green/60 hover:shadow-2xl hover:shadow-neon-green/[5%] transition-all duration-300 relative text-left"
+            className="lg:col-span-7 rounded-3xl border-2 border-blue-600 bg-white p-6 md:p-10 flex flex-col justify-between shadow-[0_15px_45px_rgba(37,99,235,0.06)] hover:shadow-[0_20px_50px_rgba(37,99,235,0.12)] transition-all duration-300 relative text-left"
           >
             {/* Absolute badge */}
-            <div className="absolute top-4 right-4 bg-neon-green text-black font-display font-black text-[9px] uppercase tracking-widest py-1 px-2.5 rounded-full shadow-md shadow-neon-green/20 leading-none">
+            <div className="absolute top-4 right-4 bg-blue-600 text-white font-display font-black text-[9px] uppercase tracking-widest py-1.5 px-3 rounded-full shadow-md shadow-blue-500/20 leading-none">
               RECOMENDADO • APENAS 4 VAGAS RESTANTES
             </div>
 
@@ -171,44 +171,44 @@ export default function Pricing({ onOpenAssessment }: PricingProps) {
               
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-mono text-neon-green tracking-wider uppercase font-extrabold block">
+                  <span className="text-[10px] font-mono text-blue-600 tracking-wider uppercase font-extrabold block">
                     SISTEMA DE PERFORMANCE ELITE
                   </span>
-                  <div className="p-1 rounded bg-neon-green/10 text-neon-green shrink-0">
+                  <div className="p-1 rounded bg-blue-50 text-blue-600 shrink-0">
                     <Flame className="w-3.5 h-3.5 animate-pulse" />
                   </div>
                 </div>
-                <h3 className="font-display text-2xl md:text-3xl font-black text-white uppercase tracking-tight">
+                <h3 className="font-display text-2xl md:text-3xl font-black text-neutral-900 uppercase tracking-tight">
                   Plano Elite Premium (Completo)
                 </h3>
-                <p className="text-xs text-neutral-400 leading-relaxed max-w-md">
+                <p className="text-xs text-neutral-600 leading-relaxed max-w-md">
                   Nosso acompanhamento topo de linha. O Coach Wandri projeta, acompanha e gerencia de forma 100% científica sua rotina de treino e biofeedback com contato direito, ilimitado e individualizado.
                 </p>
               </div>
 
               {/* Price */}
-              <div className="py-4 border-y border-white/10 space-y-1">
+              <div className="py-4 border-y border-neutral-200 space-y-1">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-5xl font-black font-mono text-neon-green select-none">{premiumMonthlyEquivalent}</span>
-                  <span className="text-xs text-neutral-400 font-mono">/ MONTH</span>
+                  <span className="text-5xl font-black font-mono text-blue-600 select-none">{premiumMonthlyEquivalent}</span>
+                  <span className="text-xs text-neutral-500 font-mono">/ MÊS</span>
                 </div>
-                <span className="text-[11px] text-neon-green font-mono block font-black">
+                <span className="text-[11px] text-blue-700 font-mono block font-black">
                   {premiumBilledText}
                 </span>
               </div>
 
               {/* Features list */}
               <div className="space-y-4">
-                <span className="text-[10px] font-mono text-neutral-400 uppercase tracking-widest font-black block">O que está incluso:</span>
+                <span className="text-[10px] font-mono text-neutral-500 uppercase tracking-widest font-black block">O que está incluso:</span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
                   {premiumFeatures.map((f, idx) => (
                     <div key={idx} className="flex gap-2.5 items-start">
-                      <div className="p-0.5 rounded-full bg-neon-green/15 text-neon-green shrink-0 mt-0.5">
+                      <div className="p-0.5 rounded-full bg-blue-50 text-blue-600 shrink-0 mt-0.5">
                         <Check className="w-3.5 h-3.5 stroke-[3.5]" />
                       </div>
                       <div className="text-left">
-                        <span className="text-xs text-white block font-bold leading-tight">{f.text}</span>
-                        <p className="text-[10px] text-neutral-400 mt-0.5 leading-normal">{f.subText}</p>
+                        <span className="text-xs text-neutral-900 block font-bold leading-tight">{f.text}</span>
+                        <p className="text-[10px] text-neutral-600 mt-0.5 leading-normal">{f.subText}</p>
                       </div>
                     </div>
                   ))}
@@ -224,7 +224,7 @@ export default function Pricing({ onOpenAssessment }: PricingProps) {
                 href="https://wa.me/5511999999999?text=Ol%C3%A1%20Wandri%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20Elite%20Premium%21"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-4.5 px-8 rounded-xl bg-neon-green text-black font-display font-black text-sm uppercase tracking-wider transition-all hover:bg-neon-green/80 hover:shadow-xl hover:shadow-neon-green/20 hover:scale-[1.02] flex items-center justify-center gap-2 cursor-pointer text-center"
+                className="flex-1 py-4.5 px-8 rounded-xl bg-blue-600 text-white font-display font-black text-sm uppercase tracking-wider transition-all hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-500/20 hover:scale-[1.02] flex items-center justify-center gap-2 cursor-pointer text-center"
               >
                 Candidatar-se ao Plano Premium <ArrowRight className="w-4 h-4 stroke-[3]" />
               </a>
@@ -236,8 +236,8 @@ export default function Pricing({ onOpenAssessment }: PricingProps) {
 
         {/* Security & Risk Mitigation block */}
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-y-3 gap-x-8 text-neutral-500 text-xs font-mono">
-          <span className="flex items-center gap-1.5"><ShieldCheck className="w-4 h-4 text-neon-green" /> Ambiente de Pagamento SSL Seguro e Criptografado</span>
-          <span className="flex items-center gap-1.5"><HelpCircle className="w-4 h-4 text-neon-green" /> Reembolso Total em até 4 Semanas sem Perguntas caso não veja mudanças</span>
+          <span className="flex items-center gap-1.5"><ShieldCheck className="w-4 h-4 text-blue-600" /> Ambiente de Pagamento SSL Seguro e Criptografado</span>
+          <span className="flex items-center gap-1.5"><HelpCircle className="w-4 h-4 text-blue-600" /> Reembolso Total em até 4 Semanas sem Perguntas caso não veja mudanças</span>
         </div>
 
       </div>
