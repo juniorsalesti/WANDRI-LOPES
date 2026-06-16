@@ -1,0 +1,200 @@
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { TrendingDown, Users, ChevronLeft, ChevronRight, Award, Flame, Quote, Sparkles } from 'lucide-react';
+import { TransformationItem } from '../types';
+
+export default function Transformations() {
+  const [activeTab, setActiveTab] = useState<'all' | 'men' | 'women'>('all');
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+
+  const transformations: TransformationItem[] = [
+    {
+      id: 'marcus',
+      name: 'Miguel',
+      age: 32,
+      duration: '90 Dias',
+      metric: 'Menos 11,8 kg (Gordura corporal: 22% para 11,5%)',
+      beforeImg: 'https://picsum.photos/seed/fitness-marcus-before/500/600?blur=6',
+      afterImg: 'https://picsum.photos/seed/fitness-marcus-after/500/600',
+      beforeValue: '97,5 kg',
+      afterValue: '85,7 kg',
+      quote: "A periodização biomecânica do Wandri salvou meus joelhos. Eliminei quase 12 kg de gordura corporal resistente enquanto batia recordes históricos de força nos meus levantamentos.",
+      gender: 'men'
+    },
+    {
+      id: 'sarah',
+      name: 'Sara',
+      age: 28,
+      duration: '12 Semanas',
+      metric: 'Perdeu 8,1 kg de Gordura Pura e Definiu o Corpo',
+      beforeImg: 'https://picsum.photos/seed/fitness-sarah-before/500/600?blur=5',
+      afterImg: 'https://picsum.photos/seed/fitness-sarah-after/500/600',
+      beforeValue: '71,6 kg',
+      afterValue: '63,5 kg',
+      quote: "Sem restrições absurdas de doces, apenas parâmetros e calorias sob medida. Os feedbacks regulares sobre a execução dos meus treinos me deram uma autoconfiança indescritível.",
+      gender: 'women'
+    },
+    {
+      id: 'david',
+      name: 'Davi',
+      age: 29,
+      duration: '90 Dias',
+      metric: 'Ganhou 6,3 kg de Massa Magra Densa',
+      beforeImg: 'https://picsum.photos/seed/fitness-alex-before/500/600?blur=7',
+      afterImg: 'https://picsum.photos/seed/fitness-alex-after/500/600',
+      beforeValue: '73,4 kg',
+      afterValue: '79,7 kg',
+      quote: "Eu passei anos comendo tudo o que via pela frente sem ver resultados densos. O Wandri organizou minhas janelas de descanso e nutrientes. Mudança total de patamar.",
+      gender: 'men'
+    },
+    {
+      id: 'emily',
+      name: 'Emília',
+      age: 33,
+      duration: '90 Dias',
+      metric: 'Menos 13% de Gordura Corporal e Abdômen Definido',
+      beforeImg: 'https://picsum.photos/seed/fitness-jessica-before/500/600?blur=6',
+      afterImg: 'https://picsum.photos/seed/fitness-jessica-after/500/600',
+      beforeValue: '29% GC',
+      afterValue: '16% GC',
+      quote: "Os treinos dinâmicos se adaptaram de forma excepcional à minha rotina pesada de viagens corporativas. O acompanhamento diário me blindou das recaídas. Melhor decisão que já tomei.",
+      gender: 'women'
+    }
+  ];
+
+  const filteredTrans = transformations.filter(t => 
+    activeTab === 'all' || t.gender === activeTab
+  );
+
+  return (
+    <section 
+      id="results_section" 
+      className="relative py-20 bg-[#080808] border-b border-white/[0.03] overflow-hidden"
+    >
+      {/* Background visual spotlight */}
+      <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-neon-green/3 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10 text-center">
+        
+        {/* Section Header */}
+        <div className="max-w-3xl mx-auto space-y-4 mb-12">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neon-green/10 border border-neon-green/20">
+            <Award className="w-3.5 h-3.5 text-neon-green" />
+            <span className="text-[10px] md:text-xs font-mono font-bold tracking-widest text-neon-green uppercase">CASOS DE SUCESSO COGNITIVOS E BIOLÓGICOS</span>
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white uppercase">
+            TRANSFORMAÇÕES REAIS <br className="hidden sm:inline" />
+            <span className="text-gradient-neon font-black">E CERTIFICADAS</span>
+          </h2>
+          <p className="text-neutral-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+            Nós não entregamos perdas de peso passageiras baseadas em fome; nós fazemos otimizações fisiológicas. Veja transformações reais dos nossos graduados da mentoria.
+          </p>
+        </div>
+
+        {/* Dynamic Category Tabs */}
+        <div className="flex items-center justify-center gap-3 mb-12">
+          <div className="glass-panel p-1.5 rounded-xl border border-white/5 flex items-center">
+            {[
+              { id: 'all', label: 'TODOS' },
+              { id: 'men', label: 'MASCULINO' },
+              { id: 'women', label: 'FEMININO' }
+            ].map(tab => (
+              <button
+                id={`tab_trans_${tab.id}`}
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id as any)}
+                className={`py-2 px-4 rounded-lg font-display font-extrabold text-[11px] tracking-widest transition-all cursor-pointer uppercase ${
+                  activeTab === tab.id 
+                    ? 'bg-neon-green text-black shadow-md shadow-neon-green/20' 
+                    : 'text-neutral-400 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Gallery responsive layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 pt-2">
+          <AnimatePresence mode="popLayout">
+            {filteredTrans.map((item) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.3 }}
+                id={`trans_card_${item.id}`}
+                className="group relative p-5 rounded-2xl glass-panel border border-white/5 hover:border-white/10 transition-all duration-300 overflow-hidden flex flex-col gap-4 text-left"
+              >
+                
+                {/* Header with name info */}
+                <div className="flex items-center justify-between pb-2 border-b border-white/5">
+                  <h4 className="font-display font-black text-white text-lg uppercase tracking-wider">
+                    {item.name}
+                  </h4>
+                  <span className="text-[10px] font-mono text-neon-green uppercase tracking-widest font-bold">
+                    Evolução Confirmada
+                  </span>
+                </div>
+
+                {/* Images layout side-by-side (Before / After) */}
+                <div className="flex gap-4 w-full">
+                  
+                  {/* Before */}
+                  <div className="flex-1 relative aspect-[3/4] rounded-xl overflow-hidden border border-white/5 bg-black/40">
+                    <img 
+                      src={item.beforeImg} 
+                      alt={`${item.name} Antes`} 
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover grayscale opacity-50 select-none pointer-events-none" 
+                    />
+                    <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/75 border border-white/15 font-mono text-[9px] text-neutral-400 uppercase tracking-widest">
+                      Antes
+                    </div>
+                  </div>
+
+                  {/* After */}
+                  <div className="flex-1 relative aspect-[3/4] rounded-xl overflow-hidden border border-neon-green/30 bg-black/40 shadow-lg shadow-neon-green/5">
+                    <img 
+                      src={item.afterImg} 
+                      alt={`${item.name} Depois`} 
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover scale-[1.02] group-hover:scale-105 transition-transform duration-700 pointer-events-none select-none" 
+                    />
+                    <div className="absolute top-2 right-2 px-2 py-0.5 rounded bg-neon-green text-black font-mono font-bold text-[9px] uppercase tracking-widest leading-none">
+                      Depois
+                    </div>
+                  </div>
+
+                </div>
+
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
+
+        {/* Dynamic bottom social proof trigger */}
+        <div className="mt-12 p-5 rounded-2xl max-w-2xl mx-auto glass-panel border border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <span className="text-xs text-neutral-400 font-mono text-left block">
+              Junte-se a mais de <span className="text-white font-bold font-sans">528+ alunos</span> que começaram esta semana.
+            </span>
+          </div>
+
+          <button
+            onClick={() => {
+              const el = document.getElementById('pricing_section');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="py-2.5 px-5 rounded-lg border border-neon-green/40 hover:bg-neon-green hover:text-black font-display font-extrabold text-xs tracking-widest transition-all cursor-pointer uppercase text-neon-green shrink-0"
+          >
+            Quebrar Meus Limites Agora
+          </button>
+        </div>
+
+      </div>
+    </section>
+  );
+}

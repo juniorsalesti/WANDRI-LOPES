@@ -1,0 +1,6 @@
+{
+  "name": "Premium Online Fitness Coaching",
+  "description": "A premium, high-converting personal training and online coaching landing page, featuring bespoke fitness programs, interactive assessment tools, and stunning proof of results.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
