@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { ShieldAlert, Check, Sparkles, Smile, ShieldCheck, Heart, UserCheck } from 'lucide-react';
 
+const clientsImg = new URL('../assets/images/fitness_clients_group_1781558091776.jpg', import.meta.url).href;
+
 export default function WhyChooseMe() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -34,7 +36,7 @@ export default function WhyChooseMe() {
   return (
     <section 
       id="why_choose_me_section" 
-      className="relative py-20 md:py-24 bg-[#080808] border-b border-white/[0.03]"
+      className="relative py-12 sm:py-20 md:py-24 bg-[#080808] border-b border-white/[0.03]"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         
@@ -98,13 +100,13 @@ export default function WhyChooseMe() {
             {/* Ambient Background glow layer */}
             <div className="absolute inset-0 bg-neon-green/5 blur-[80px] rounded-full pointer-events-none z-0" />
 
-            <div className="relative w-full max-w-[360px] md:max-w-[420px] aspect-[4/5] z-10">
+            <div className="relative w-full max-w-[280px] xs:max-w-[325px] sm:max-w-[360px] md:max-w-[420px] aspect-[4/5] z-10 mx-auto">
               
               {/* Premium client lifestyle image frame */}
               <div className="w-full h-full rounded-2xl overflow-hidden glass-panel border border-white/10 shadow-2xl relative">
                 <img 
                   id="clients_group_img"
-                  src="/src/assets/images/fitness_clients_group_1781558091776.jpg" 
+                  src={clientsImg} 
                   alt="Wandri Lopes Clientes Transformações" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover scale-[1.01] hover:scale-105 transition-transform duration-700 object-center filter saturate-[1.1]"
@@ -114,26 +116,26 @@ export default function WhyChooseMe() {
 
               {/* Float Badge 1 */}
               <div 
-                className="absolute -right-4 top-[15%] glass-panel rounded-xl py-2.5 px-4 border border-white/10 shadow-xl flex items-center gap-2 max-w-[170px]"
+                className="absolute -right-2 sm:-right-4 top-[15%] glass-panel rounded-xl py-2 px-3 sm:py-2.5 sm:px-4 border border-white/10 shadow-xl flex items-center gap-1.5 sm:gap-2 max-w-[130px] sm:max-w-[170px]"
                 style={{ animation: 'float 5.5s ease-in-out infinite' }}
               >
-                <div className="w-2.5 h-2.5 rounded-full bg-neon-green animate-pulse" />
-                <span className="text-[11px] font-mono font-bold text-white uppercase tracking-wider leading-none">
+                <div className="w-2 h-2 rounded-full bg-neon-green animate-pulse" />
+                <span className="text-[9px] sm:text-[11px] font-mono font-bold text-white uppercase tracking-wider leading-none">
                   98.7% DE RETENÇÃO
                 </span>
               </div>
 
               {/* Float Badge 2 */}
               <div 
-                className="absolute -left-4 bottom-[15%] glass-panel rounded-xl py-3 px-4 border border-white/10 shadow-xl flex items-center gap-3 max-w-[200px]"
+                className="absolute -left-2 sm:-left-4 bottom-[15%] glass-panel rounded-xl py-2.5 px-3 sm:py-3 sm:px-4 border border-white/10 shadow-xl flex items-center gap-2.5 sm:gap-3 max-w-[170px] sm:max-w-[200px]"
                 style={{ animation: 'float 6.5s ease-in-out infinite reverse 0.5s' }}
               >
-                <div className="p-1.5 bg-neon-green/10 text-neon-green rounded-lg shrink-0">
-                  <UserCheck className="w-5 h-5" />
+                <div className="p-1 sm:p-1.5 bg-neon-green/10 text-neon-green rounded-lg shrink-0">
+                  <UserCheck className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <span className="text-white font-display font-extrabold text-xs block leading-none">SESSÕES DIRETAS</span>
-                  <span className="text-[9px] text-neutral-400 font-mono block mt-1 leading-tight">FEEDBACKS DE EVOLUÇÃO</span>
+                  <span className="text-white font-display font-extrabold text-[10px] sm:text-xs block leading-none">SESSÕES DIRETAS</span>
+                  <span className="text-[8px] sm:text-[9px] text-neutral-400 font-mono block mt-1 leading-tight">FEEDBACKS DE EVOLUÇÃO</span>
                 </div>
               </div>
 

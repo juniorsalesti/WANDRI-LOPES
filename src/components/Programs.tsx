@@ -48,7 +48,7 @@ export default function Programs({ onOpenAssessment }: ProgramsProps) {
   return (
     <section 
       id="programs_section" 
-      className="relative py-24 bg-neutral-950 border-b border-white/[0.03] overflow-hidden"
+      className="relative py-14 sm:py-20 md:py-24 bg-neutral-950 border-b border-white/[0.03] overflow-hidden"
     >
       {/* Background neon glows */}
       <div className="absolute top-[30%] left-[-15%] w-[400px] h-[400px] bg-neon-green/3 blur-[140px] rounded-full pointer-events-none" />

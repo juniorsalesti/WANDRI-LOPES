@@ -5,7 +5,8 @@ import { TransformationItem } from '../types';
 
 export default function Transformations() {
   const [activeTab, setActiveTab] = useState<'all' | 'men' | 'women'>('all');
-  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState<'left' | 'right'>('right');
 
   const transformations: TransformationItem[] = [
     {
@@ -66,10 +67,44 @@ export default function Transformations() {
     activeTab === 'all' || t.gender === activeTab
   );
 
+  const handleTabChange = (tab: 'all' | 'men' | 'women') => {
+    setActiveTab(tab);
+    setCurrentIndex(0);
+  };
+
+  const nextSlide = () => {
+    if (filteredTrans.length <= 1) return;
+    setDirection('right');
+    setCurrentIndex((prev) => (prev === filteredTrans.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    if (filteredTrans.length <= 1) return;
+    setDirection('left');
+    setCurrentIndex((prev) => (prev === 0 ? filteredTrans.length - 1 : prev - 1));
+  };
+
+  const slideVariants = {
+    enter: (dir: 'left' | 'right') => ({
+      x: dir === 'right' ? 100 : -100,
+      opacity: 0
+    }),
+    center: {
+      x: 0,
+      opacity: 1
+    },
+    exit: (dir: 'left' | 'right') => ({
+      x: dir === 'right' ? -100 : 100,
+      opacity: 0
+    })
+  };
+
+  const activeItem = filteredTrans[currentIndex];
+
   return (
     <section 
       id="results_section" 
-      className="relative py-20 bg-[#080808] border-b border-white/[0.03] overflow-hidden"
+      className="relative py-14 sm:py-20 bg-[#080808] border-b border-white/[0.03] overflow-hidden"
     >
       {/* Background visual spotlight */}
       <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-neon-green/3 blur-[120px] rounded-full pointer-events-none" />
@@ -92,7 +127,7 @@ export default function Transformations() {
         </div>
 
         {/* Dynamic Category Tabs */}
-        <div className="flex items-center justify-center gap-3 mb-12">
+        <div className="flex items-center justify-center gap-3 mb-8">
           <div className="glass-panel p-1.5 rounded-xl border border-white/5 flex items-center">
             {[
               { id: 'all', label: 'TODOS' },
@@ -102,7 +137,7 @@ export default function Transformations() {
               <button
                 id={`tab_trans_${tab.id}`}
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
+                onClick={() => handleTabChange(tab.id as any)}
                 className={`py-2 px-4 rounded-lg font-display font-extrabold text-[11px] tracking-widest transition-all cursor-pointer uppercase ${
                   activeTab === tab.id 
                     ? 'bg-neon-green text-black shadow-md shadow-neon-green/20' 
@@ -115,64 +150,113 @@ export default function Transformations() {
           </div>
         </div>
 
-        {/* Gallery responsive layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 pt-2">
-          <AnimatePresence mode="popLayout">
-            {filteredTrans.map((item) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3 }}
-                id={`trans_card_${item.id}`}
-                className="group relative p-5 rounded-2xl glass-panel border border-white/5 hover:border-white/10 transition-all duration-300 overflow-hidden flex flex-col gap-4 text-left"
+        {/* Carousel Container */}
+        <div className="relative max-w-2xl mx-auto px-4 sm:px-10">
+          <div className="relative overflow-visible min-h-[340px] xs:min-h-[400px] sm:min-h-[460px]">
+            <AnimatePresence mode="wait" custom={direction}>
+              {activeItem && (
+                <motion.div
+                  key={activeItem.id}
+                  custom={direction}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.35, ease: 'easeInOut' }}
+                  className="w-full"
+                >
+                  <div
+                    id={`trans_card_${activeItem.id}`}
+                    className="p-5 sm:p-6 rounded-2xl glass-panel border border-white/5 flex flex-col gap-5 text-left shadow-2xl relative"
+                  >
+                    {/* Header with name only */}
+                    <div className="flex items-center justify-between pb-3 border-b border-white/5">
+                      <h4 className="font-display font-black text-white text-xl uppercase tracking-wider">
+                        {activeItem.name}
+                      </h4>
+                      <span className="text-[9px] font-mono text-neon-green/85 uppercase tracking-widest font-black border border-neon-green/10 bg-neon-green/5 px-2.5 py-1 rounded">
+                        Evolução Confirmada
+                      </span>
+                    </div>
+
+                    {/* Images layout side-by-side (Before / After) */}
+                    <div className="flex gap-4 w-full">
+                      {/* Before */}
+                      <div className="flex-1 relative aspect-[3/4] rounded-xl overflow-hidden border border-white/5 bg-black/40">
+                        <img 
+                          src={activeItem.beforeImg} 
+                          alt={`${activeItem.name} Antes`} 
+                          referrerPolicy="no-referrer"
+                          className="w-full h-full object-cover grayscale opacity-50 select-none pointer-events-none" 
+                        />
+                        <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/75 border border-white/15 font-mono text-[9px] text-neutral-400 uppercase tracking-widest">
+                          Antes
+                        </div>
+                      </div>
+
+                      {/* After */}
+                      <div className="flex-1 relative aspect-[3/4] rounded-xl overflow-hidden border border-neon-green/30 bg-black/40 shadow-lg shadow-neon-green/5">
+                        <img 
+                          src={activeItem.afterImg} 
+                          alt={`${activeItem.name} Depois`} 
+                          referrerPolicy="no-referrer"
+                          className="w-full h-full object-cover scale-[1.02] pointer-events-none select-none" 
+                        />
+                        <div className="absolute top-2 right-2 px-2 py-0.5 rounded bg-neon-green text-black font-mono font-bold text-[9px] uppercase tracking-widest leading-none">
+                          Depois
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Navigation controls custom styled */}
+          {filteredTrans.length > 1 && (
+            <>
+              {/* Previous Button */}
+              <button
+                id="btn_carousel_prev"
+                onClick={prevSlide}
+                className="absolute left-[-15px] sm:left-[-25px] top-[45%] -translate-y-1/2 w-10 h-10 rounded-full bg-[#111] hover:bg-neutral-900 border border-white/10 hover:border-neon-green/50 text-white flex items-center justify-center cursor-pointer transition-all hover:scale-105 active:scale-95 shadow-lg shadow-black/80 z-20"
+                aria-label="Evolução anterior"
               >
-                
-                {/* Header with name info */}
-                <div className="flex items-center justify-between pb-2 border-b border-white/5">
-                  <h4 className="font-display font-black text-white text-lg uppercase tracking-wider">
-                    {item.name}
-                  </h4>
-                  <span className="text-[10px] font-mono text-neon-green uppercase tracking-widest font-bold">
-                    Evolução Confirmada
-                  </span>
-                </div>
+                <ChevronLeft className="w-5 h-5 stroke-[2.5]" />
+              </button>
 
-                {/* Images layout side-by-side (Before / After) */}
-                <div className="flex gap-4 w-full">
-                  
-                  {/* Before */}
-                  <div className="flex-1 relative aspect-[3/4] rounded-xl overflow-hidden border border-white/5 bg-black/40">
-                    <img 
-                      src={item.beforeImg} 
-                      alt={`${item.name} Antes`} 
-                      referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover grayscale opacity-50 select-none pointer-events-none" 
-                    />
-                    <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/75 border border-white/15 font-mono text-[9px] text-neutral-400 uppercase tracking-widest">
-                      Antes
-                    </div>
-                  </div>
+              {/* Next Button */}
+              <button
+                id="btn_carousel_next"
+                onClick={nextSlide}
+                className="absolute right-[-15px] sm:right-[-25px] top-[45%] -translate-y-1/2 w-10 h-10 rounded-full bg-[#111] hover:bg-neutral-900 border border-white/10 hover:border-neon-green/50 text-white flex items-center justify-center cursor-pointer transition-all hover:scale-105 active:scale-95 shadow-lg shadow-black/80 z-20"
+                aria-label="Próxima evolução"
+              >
+                <ChevronRight className="w-5 h-5 stroke-[2.5]" />
+              </button>
 
-                  {/* After */}
-                  <div className="flex-1 relative aspect-[3/4] rounded-xl overflow-hidden border border-neon-green/30 bg-black/40 shadow-lg shadow-neon-green/5">
-                    <img 
-                      src={item.afterImg} 
-                      alt={`${item.name} Depois`} 
-                      referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover scale-[1.02] group-hover:scale-105 transition-transform duration-700 pointer-events-none select-none" 
-                    />
-                    <div className="absolute top-2 right-2 px-2 py-0.5 rounded bg-neon-green text-black font-mono font-bold text-[9px] uppercase tracking-widest leading-none">
-                      Depois
-                    </div>
-                  </div>
-
-                </div>
-
-              </motion.div>
-            ))}
-          </AnimatePresence>
+              {/* Dots indicator index row */}
+              <div className="flex items-center justify-center gap-2 mt-6">
+                {filteredTrans.map((_, idx) => (
+                  <button
+                    id={`carousel_dot_${idx}`}
+                    key={idx}
+                    onClick={() => {
+                      setDirection(idx > currentIndex ? 'right' : 'left');
+                      setCurrentIndex(idx);
+                    }}
+                    className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                      currentIndex === idx 
+                        ? 'w-6 bg-neon-green shadow-sm shadow-neon-green/45' 
+                        : 'w-2.5 bg-neutral-700 hover:bg-neutral-500'
+                    }`}
+                    aria-label={`Slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
         </div>
 
         {/* Dynamic bottom social proof trigger */}
@@ -198,3 +282,4 @@ export default function Transformations() {
     </section>
   );
 }
+
