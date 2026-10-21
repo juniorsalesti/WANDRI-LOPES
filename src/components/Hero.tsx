@@ -13,12 +13,28 @@ export default function Hero({ onOpenAssessment, onScrollToStories }: HeroProps)
       id="hero_section" 
       className="relative min-h-[calc(100vh-100px)] flex items-center justify-center py-12 md:py-20 lg:py-24 overflow-hidden"
     >
+      {/* Background Gym Image with calibrated cinematic lighting to showcase the gym */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+        <img 
+          src="/src/assets/images/gym_hero_bg_1792437025109.jpg" 
+          alt="Academia de musculação e treinamento de alta performance" 
+          referrerPolicy="no-referrer"
+          className="w-full h-full object-cover object-center scale-100 filter brightness-[0.70] contrast-[1.08] saturate-[1.15]"
+        />
+        {/* Soft atmospheric tint - keeps the gym clearly visible while ensuring text readability */}
+        <div className="absolute inset-0 bg-[#080808]/40" />
+        {/* Text backdrop gradient on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#080808]/85 via-[#080808]/45 to-transparent hidden lg:block" />
+        {/* Mobile scrim for readability */}
+        <div className="absolute inset-0 bg-[#080808]/30 lg:hidden" />
+        {/* Top subtle navbar blend and bottom section transition */}
+        <div className="absolute top-0 inset-x-0 h-28 bg-gradient-to-b from-[#080808]/80 to-transparent" />
+        <div className="absolute bottom-0 inset-x-0 h-36 bg-gradient-to-t from-[#080808] via-[#080808]/60 to-transparent" />
+      </div>
+
       {/* Background Neon ambient meshes */}
-      <div className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] bg-neon-green/5 blur-[120px] rounded-full pointer-events-none select-none z-0" />
-      <div className="absolute bottom-[20%] right-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-neon-green/3 blur-[150px] rounded-full pointer-events-none select-none z-0" />
-      
-      {/* Absolute dark vertical grid lines */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] pointer-events-none select-none z-0" />
+      <div className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] bg-neon-green/10 blur-[120px] rounded-full pointer-events-none select-none z-0" />
+      <div className="absolute bottom-[20%] right-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-neon-green/5 blur-[150px] rounded-full pointer-events-none select-none z-0" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -27,21 +43,21 @@ export default function Hero({ onOpenAssessment, onScrollToStories }: HeroProps)
           <div className="lg:col-span-7 space-y-6 md:space-y-8 flex flex-col items-center lg:items-start text-center lg:text-left">
             
             {/* Top Tagline */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel border border-white/5 shadow-md">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel-heavy border border-white/10 shadow-lg">
               <Sparkles className="w-3.5 h-3.5 text-neon-green" />
-              <span className="text-[10px] md:text-xs font-mono font-bold tracking-widest text-neutral-300 uppercase">
+              <span className="text-[10px] md:text-xs font-mono font-bold tracking-widest text-neutral-200 uppercase">
                 Vagas abertas para a mentoria
               </span>
             </div>
 
             {/* Headline */}
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[0.95] text-white">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[0.95] text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
               TRANSFORME SEU <br />
-              <span className="text-gradient-neon filter drop-shadow-[0_0_20px_rgba(37,99,235,0.15)]">CORPO EM 90 DIAS</span>
+              <span className="text-gradient-neon filter drop-shadow-[0_0_25px_rgba(37,99,235,0.4)]">CORPO EM 90 DIAS</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-neutral-400 text-base md:text-lg max-w-xl leading-relaxed text-balance">
+            <p className="text-neutral-200 text-base md:text-lg max-w-xl leading-relaxed text-balance drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] font-medium">
               Treino personalizado, planejamento de dieta individualizado e suporte diário de alta performance. Desenvolvido cientificamente para esculpir músculos e derreter gordura.
             </p>
 

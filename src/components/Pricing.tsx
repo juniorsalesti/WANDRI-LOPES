@@ -46,25 +46,6 @@ export default function Pricing({ onOpenAssessment }: PricingProps) {
         'Cartão em até 6x'
       ],
       whatsappLink: 'https://wa.me/5511999999999?text=Ol%C3%A1%20Wandri%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20Semestral%20de%20180%20dias%20%28R%24%20897%29%21'
-    },
-    {
-      id: 'hibrido',
-      name: 'Plano Híbrido',
-      duration: '180 dias (Semestral)',
-      price: 'R$ 1.617,00',
-      popular: false,
-      tagline: 'Avançado com encontros e acompanhamento completo',
-      badge: 'PROXIMIDADE MÁXIMA',
-      features: [
-        { text: 'Atendimento híbrido', subText: 'Mentoria online diária somada a suporte presencial consultivo.' },
-        { text: 'Treino estruturado de elite', subText: 'Ajustes posturais avançados e precisão biomecânica refinada.' },
-        { text: 'Planejamento de Dieta de Elite', subText: 'Orientação de alta performance e suporte suplementar completo.' }
-      ],
-      payments: [
-        'PIX',
-        'Cartão em até 2x'
-      ],
-      whatsappLink: 'https://wa.me/5511999999999?text=Ol%C3%A1%20Wandri%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20H%C3%ADbrido%20de%20180%20dias%20%28R%24%201.617%29%21'
     }
   ];
 
@@ -95,7 +76,7 @@ export default function Pricing({ onOpenAssessment }: PricingProps) {
         </div>
 
         {/* Pricing Layout Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto pt-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto pt-2">
           {plans.map((plan) => {
             const isFeatured = plan.popular;
             return (
