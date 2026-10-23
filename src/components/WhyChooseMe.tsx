@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { ShieldAlert, Check, Sparkles, Smile, ShieldCheck, Heart, UserCheck } from 'lucide-react';
 
-const clientsImg = new URL('../assets/images/fitness_clients_group_1781558091776.jpg', import.meta.url).href;
-
 export default function WhyChooseMe() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -106,8 +104,8 @@ export default function WhyChooseMe() {
               <div className="w-full h-full rounded-2xl overflow-hidden glass-panel border border-white/10 shadow-2xl relative">
                 <img 
                   id="clients_group_img"
-                  src={clientsImg} 
-                  alt="Wandri Lopes Clientes Transformações" 
+                  src="https://i.ibb.co/zVj9spt9/JEE-2333.jpg" 
+                  alt="Wandri Lopes Mentoria Diferenciada" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover scale-[1.01] hover:scale-105 transition-transform duration-700 object-center filter saturate-[1.1]"
                 />
