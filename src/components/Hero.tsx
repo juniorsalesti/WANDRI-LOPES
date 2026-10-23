@@ -102,7 +102,7 @@ export default function Hero({ onOpenAssessment, onScrollToStories }: HeroProps)
               <div className="w-full h-full rounded-2xl overflow-hidden glass-panel border border-white/10 relative shadow-2xl">
                 <img 
                   id="hero_trainer_img"
-                  src="https://i.ibb.co/wrpzL0Ty/wandri.jpg" 
+                  src="https://i.ibb.co/DHqmZfWc/JEE-2360.jpg" 
                   alt="Elite Personal Trainer" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover scale-[1.01] hover:scale-105 transition-all duration-1000 object-center filter saturate-[1.1]"
