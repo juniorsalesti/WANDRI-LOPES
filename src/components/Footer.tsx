@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Phone, Shield, ArrowUp, Instagram, Youtube, Twitter } from 'lucide-react';
+import { Phone, ArrowUp, Instagram } from 'lucide-react';
 
 export default function Footer() {
   const [activeModal, setActiveModal] = useState<'privacy' | 'terms' | null>(null);
@@ -37,24 +37,14 @@ export default function Footer() {
             <div className="flex items-center gap-3 pt-2">
               <a 
                 id="social_ig"
-                href="#insta" 
-                className="p-2 rounded-full bg-white/5 text-neutral-400 hover:bg-neon-green hover:text-black transition-all border border-white/5 cursor-pointer"
+                href="https://www.instagram.com/wandricoach/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="p-2.5 rounded-full bg-white/5 text-neutral-400 hover:bg-neon-green hover:text-black transition-all border border-white/5 cursor-pointer inline-flex items-center justify-center hover:scale-110"
+                title="Instagram"
               >
                 <Instagram className="w-4 h-4" />
-              </a>
-              <a 
-                id="social_yt"
-                href="#youtube" 
-                className="p-2 rounded-full bg-white/5 text-neutral-400 hover:bg-neon-green hover:text-black transition-all border border-white/5 cursor-pointer"
-              >
-                <Youtube className="w-4 h-4" />
-              </a>
-              <a 
-                id="social_tw"
-                href="#twitter" 
-                className="p-2 rounded-full bg-white/5 text-neutral-400 hover:bg-neon-green hover:text-black transition-all border border-white/5 cursor-pointer"
-              >
-                <Twitter className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -87,16 +77,15 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3.5 text-xs text-neutral-400">
               <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-neon-green" />
-                <span className="font-mono">suporte@wandrilopes.com</span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <MapPin className="w-4 h-4 text-neon-green" />
-                <span>Estúdio Elite Virtual • Brickell Ave, Miami, FL & Alunos pelo Brasil</span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-neon-green" />
-                <span className="font-mono">+1 (800) 520-COMPLY</span>
+                <Phone className="w-4 h-4 text-neon-green shrink-0" />
+                <a 
+                  href="https://wa.me/5519991586637?text=Ol%C3%A1%20Wandri%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20mentoria%20de%20treino%20e%20nutri%C3%A7%C3%A3o%21"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono hover:text-neon-green transition-colors cursor-pointer text-sm font-semibold"
+                >
+                  (19) 99158-6637
+                </a>
               </li>
             </ul>
           </div>

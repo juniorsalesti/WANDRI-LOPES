@@ -68,7 +68,7 @@ export default function Hero({ onOpenAssessment, onScrollToStories }: HeroProps)
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto pt-2">
               <a
                 id="hero_cta_primary"
-                href="https://wa.me/5511999999999?text=Ol%C3%A1%20Wandri%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20mentoria%20de%20treino%20e%20nutri%C3%A7%C3%A3o%21"
+                href="https://wa.me/5519991586637?text=Ol%C3%A1%20Wandri%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20mentoria%20de%20treino%20e%20nutri%C3%A7%C3%A3o%21"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto group relative py-4 px-8 rounded-xl bg-neon-green text-black font-display font-black text-sm uppercase tracking-wider transition-all shadow-[0_0_30px_rgba(37,99,235,0.1)] hover:shadow-neon-green/35 hover:scale-[1.03] active:scale-95 flex items-center justify-center gap-2 cursor-pointer text-center"

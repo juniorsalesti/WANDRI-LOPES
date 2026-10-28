@@ -44,7 +44,7 @@ export default function FinalCTA({ onOpenAssessment }: FinalCTAProps) {
           <div className="max-w-md mx-auto relative z-10 pt-2">
             <a
               id="final_apply_btn"
-              href="https://wa.me/5511999999999?text=Ol%C3%A1%20Wandri%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20mentoria%20de%20treino%20e%20nutri%C3%A7%C3%A3o%21"
+              href="https://wa.me/5519991586637?text=Ol%C3%A1%20Wandri%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20mentoria%20de%20treino%20e%20nutri%C3%A7%C3%A3o%21"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full relative py-5 px-8 rounded-xl bg-neon-green text-black font-display font-black text-base uppercase tracking-wider transition-all shadow-[0_0_40px_rgba(56,242,163,0.15)] hover:shadow-neon-green/45 hover:scale-[1.03] active:scale-95 flex items-center justify-center gap-2.5 cursor-pointer text-center"

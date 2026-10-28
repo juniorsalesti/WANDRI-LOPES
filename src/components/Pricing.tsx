@@ -25,7 +25,7 @@ export default function Pricing({ onOpenAssessment }: PricingProps) {
         'PIX',
         'Cartão em até 3x'
       ],
-      whatsappLink: 'https://wa.me/5511999999999?text=Ol%C3%A1%20Wandri%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20Trimestral%20de%2090%20dias%20%28R%24%20497%29%21'
+      whatsappLink: 'https://wa.me/5519991586637?text=Ol%C3%A1%20Wandri%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20Trimestral%20de%2090%20dias%20%28R%24%20497%29%21'
     },
     {
       id: 'semestral',
@@ -45,7 +45,7 @@ export default function Pricing({ onOpenAssessment }: PricingProps) {
         'PIX',
         'Cartão em até 6x'
       ],
-      whatsappLink: 'https://wa.me/5511999999999?text=Ol%C3%A1%20Wandri%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20Semestral%20de%20180%20dias%20%28R%24%20897%29%21'
+      whatsappLink: 'https://wa.me/5519991586637?text=Ol%C3%A1%20Wandri%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20Semestral%20de%20180%20dias%20%28R%24%20897%29%21'
     }
   ];
 
