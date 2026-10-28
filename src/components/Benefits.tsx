@@ -60,11 +60,11 @@ export default function Benefits() {
   return (
     <section 
       id="benefits_section" 
-      className="relative py-16 sm:py-24 bg-[#F9FAFB] border-y border-neutral-200 overflow-hidden"
+      className="content-auto relative py-16 sm:py-24 bg-[#F9FAFB] border-y border-neutral-200 overflow-hidden"
     >
-      {/* Background soft ambient lighting */}
-      <div className="absolute top-[25%] right-[-10%] w-[350px] h-[350px] bg-[#2563eb]/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-[10%] left-[-5%] w-[250px] h-[250px] bg-[#2563eb]/5 blur-[100px] rounded-full pointer-events-none" />
+      {/* Background soft ambient lighting (hidden on mobile for high FPS) */}
+      <div className="hidden md:block absolute top-[25%] right-[-10%] w-[350px] h-[350px] bg-[#2563eb]/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="hidden md:block absolute bottom-[10%] left-[-5%] w-[250px] h-[250px] bg-[#2563eb]/5 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         

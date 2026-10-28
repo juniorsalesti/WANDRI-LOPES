@@ -38,11 +38,11 @@ export default function Programs({ onOpenAssessment }: ProgramsProps) {
   return (
     <section 
       id="programs_section" 
-      className="relative py-16 sm:py-24 bg-white border-b border-neutral-200 overflow-hidden"
+      className="content-auto relative py-16 sm:py-24 bg-white border-b border-neutral-200 overflow-hidden"
     >
-      {/* Background soft ambient glows */}
-      <div className="absolute top-[30%] left-[-15%] w-[400px] h-[400px] bg-blue-500/5 blur-[140px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-[20%] right-[-15%] w-[350px] h-[350px] bg-blue-400/5 blur-[130px] rounded-full pointer-events-none" />
+      {/* Background soft ambient glows (hidden on mobile) */}
+      <div className="hidden md:block absolute top-[30%] left-[-15%] w-[400px] h-[400px] bg-blue-500/5 blur-[140px] rounded-full pointer-events-none" />
+      <div className="hidden md:block absolute bottom-[20%] right-[-15%] w-[350px] h-[350px] bg-blue-400/5 blur-[130px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         
@@ -94,8 +94,8 @@ export default function Programs({ onOpenAssessment }: ProgramsProps) {
           id="active_program_container"
           className="bg-neutral-50/70 border border-neutral-200 rounded-3xl p-6 md:p-10 lg:p-12 relative overflow-hidden transition-all duration-500 hover:border-blue-200 hover:shadow-[0_12px_40px_rgba(0,0,0,0.05)]"
         >
-          {/* Subtle light blue glow effect on card hover */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 blur-[90px] rounded-full pointer-events-none" />
+          {/* Subtle light blue glow effect on card hover (hidden on mobile) */}
+          <div className="hidden md:block absolute top-0 right-0 w-96 h-96 bg-blue-500/5 blur-[90px] rounded-full pointer-events-none" />
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start relative z-10">
             

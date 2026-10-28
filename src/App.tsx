@@ -34,7 +34,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative bg-[#080808] text-white selection:bg-neon-green selection:text-black">
+    <div className="relative bg-[#080808] text-white selection:bg-neon-green selection:text-black overflow-x-hidden">
       
       {/* Actionable Top Banner & Sticky Nav */}
       <Header onOpenAssessment={() => handleOpenAssessment()} />

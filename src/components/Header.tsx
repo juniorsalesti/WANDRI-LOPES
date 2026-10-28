@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Shield, Dumbbell, Award, ArrowRight } from 'lucide-react';
+import { Menu, X, Shield, ArrowRight } from 'lucide-react';
 
 interface HeaderProps {
   onOpenAssessment: () => void;
@@ -10,10 +10,24 @@ export default function Header({ onOpenAssessment }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    let lastScrolled = false;
+    let ticking = false;
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const isScrolled = window.scrollY > 20;
+          if (isScrolled !== lastScrolled) {
+            lastScrolled = isScrolled;
+            setScrolled(isScrolled);
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -49,17 +63,15 @@ export default function Header({ onOpenAssessment }: HeaderProps) {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between">
           
-          {/* Logo with premium badge */}
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="p-2 rounded-lg bg-neon-green/15 border border-neon-green/30 group-hover:bg-neon-green/25 transition-all">
-              <Dumbbell className="w-5 h-5 text-neon-green rotate-[-45deg] group-hover:rotate-0 transition-transform duration-300" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-display font-black text-xl letter tracking-tight text-white flex items-center gap-1 leading-none uppercase">
-                WANDRI LOPES
-              </span>
-              <span className="text-[9px] font-mono tracking-widest text-neutral-400 font-bold uppercase leading-none mt-0.5">SISTEMA ELITE</span>
-            </div>
+          {/* Logo */}
+          <a href="#" className="flex items-center gap-3 group focus:outline-none">
+            <img 
+              src="https://i.ibb.co/5h5kFgH5/Design-sem-nome.png" 
+              alt="Wandri Lopes — Mentoria Elite" 
+              className="h-10 md:h-12 w-auto max-w-[200px] object-contain transition-transform duration-300 group-hover:scale-105"
+              loading="eager"
+              decoding="async"
+            />
           </a>
 
           {/* Large display desktop nav links */}
@@ -111,14 +123,15 @@ export default function Header({ onOpenAssessment }: HeaderProps) {
           
           {/* Top segment */}
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="p-2 rounded-lg bg-neon-green/15 text-neon-green">
-                <Dumbbell className="w-5 h-5 rotate-[-45deg]" />
-              </div>
-              <span className="font-display font-black text-xl text-white uppercase tracking-tight">
-                WANDRI LOPES
-              </span>
-            </div>
+            <a href="#" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 focus:outline-none">
+              <img 
+                src="https://i.ibb.co/5h5kFgH5/Design-sem-nome.png" 
+                alt="Wandri Lopes — Mentoria Elite" 
+                className="h-9 w-auto max-w-[180px] object-contain"
+                loading="eager"
+                decoding="async"
+              />
+            </a>
             <button
               id="mobile_close"
               onClick={() => setMobileMenuOpen(false)}

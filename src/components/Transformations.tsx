@@ -104,10 +104,10 @@ export default function Transformations() {
   return (
     <section 
       id="results_section" 
-      className="relative py-14 sm:py-20 bg-[#060606] border-b border-white/10 overflow-hidden"
+      className="content-auto relative py-14 sm:py-20 bg-[#060606] border-b border-white/10 overflow-hidden"
     >
-      {/* Background visual spotlight */}
-      <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-neon-green/3 blur-[120px] rounded-full pointer-events-none" />
+      {/* Background visual spotlight (hidden on mobile for instant rendering) */}
+      <div className="hidden md:block absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-neon-green/3 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10 text-center">
         
@@ -187,6 +187,8 @@ export default function Transformations() {
                           src={activeItem.beforeImg} 
                           alt={`${activeItem.name} Antes`} 
                           referrerPolicy="no-referrer"
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover grayscale opacity-50 select-none pointer-events-none" 
                         />
                         <div className="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/75 border border-white/15 font-mono text-[9px] text-neutral-400 uppercase tracking-widest">
@@ -200,6 +202,8 @@ export default function Transformations() {
                           src={activeItem.afterImg} 
                           alt={`${activeItem.name} Depois`} 
                           referrerPolicy="no-referrer"
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover scale-[1.02] pointer-events-none select-none" 
                         />
                         <div className="absolute top-2 right-2 px-2 py-0.5 rounded bg-neon-green text-black font-mono font-bold text-[9px] uppercase tracking-widest leading-none">

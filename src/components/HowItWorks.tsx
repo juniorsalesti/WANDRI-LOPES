@@ -36,11 +36,11 @@ export default function HowItWorks() {
   return (
     <section 
       id="timeline_section" 
-      className="relative py-16 sm:py-24 bg-[#F9FAFB] border-y border-neutral-200 overflow-hidden"
+      className="content-auto relative py-16 sm:py-24 bg-[#F9FAFB] border-y border-neutral-200 overflow-hidden"
     >
-      {/* Background soft ambient glows */}
-      <div className="absolute top-[50%] right-[-10%] w-[350px] h-[350px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-[10%] left-[-10%] w-[300px] h-[300px] bg-blue-400/5 blur-[110px] rounded-full pointer-events-none" />
+      {/* Background soft ambient glows (hidden on mobile) */}
+      <div className="hidden md:block absolute top-[50%] right-[-10%] w-[350px] h-[350px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="hidden md:block absolute bottom-[10%] left-[-10%] w-[300px] h-[300px] bg-blue-400/5 blur-[110px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         

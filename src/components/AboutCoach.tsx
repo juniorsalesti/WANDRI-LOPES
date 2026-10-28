@@ -24,11 +24,11 @@ export default function AboutCoach() {
   return (
     <section 
       id="about_coach_section" 
-      className="relative py-14 sm:py-20 md:py-24 bg-[#060606] border-b border-white/10 overflow-hidden"
+      className="content-auto relative py-14 sm:py-20 md:py-24 bg-[#060606] border-b border-white/10 overflow-hidden"
     >
-      {/* Background neon elements */}
-      <div className="absolute top-[20%] left-[-10%] w-[350px] h-[350px] bg-neon-green/3 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-[20%] right-[-10%] w-[400px] h-[400px] bg-neon-green/4 blur-[130px] rounded-full pointer-events-none" />
+      {/* Background neon elements (hidden on mobile for 60fps scrolling) */}
+      <div className="hidden md:block absolute top-[20%] left-[-10%] w-[350px] h-[350px] bg-neon-green/3 blur-[120px] rounded-full pointer-events-none" />
+      <div className="hidden md:block absolute bottom-[20%] right-[-10%] w-[400px] h-[400px] bg-neon-green/4 blur-[130px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         
@@ -38,7 +38,7 @@ export default function AboutCoach() {
           <div className="lg:col-span-5 relative w-full flex justify-center items-center">
             
             {/* Soft backdrop glow */}
-            <div className="absolute w-[260px] h-[260px] md:w-[380px] md:h-[380px] bg-neon-green/10 blur-[80px] rounded-full z-0 pointer-events-none" />
+            <div className="hidden md:block absolute w-[260px] h-[260px] md:w-[380px] md:h-[380px] bg-neon-green/10 blur-[80px] rounded-full z-0 pointer-events-none" />
 
             <div className="relative w-full max-w-[340px] md:max-w-[400px] aspect-[4/5] z-10">
               
@@ -49,6 +49,8 @@ export default function AboutCoach() {
                   src="https://i.ibb.co/zVj9spt9/JEE-2333.jpg" 
                   alt="Coach Wandri Lopes" 
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover scale-[1.01] hover:scale-105 transition-transform duration-700 object-center filter saturate-[1.15]"
                 />
                 

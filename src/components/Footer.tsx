@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Dumbbell, Mail, MapPin, Phone, Shield, ArrowUp, Instagram, Youtube, Twitter } from 'lucide-react';
+import { Mail, MapPin, Phone, Shield, ArrowUp, Instagram, Youtube, Twitter } from 'lucide-react';
 
 export default function Footer() {
   const [activeModal, setActiveModal] = useState<'privacy' | 'terms' | null>(null);
@@ -11,7 +11,7 @@ export default function Footer() {
   };
 
   return (
-    <footer id="footer_section" className="relative bg-neutral-950 border-t border-white/5 pt-16 pb-8 text-left">
+    <footer id="footer_section" className="content-auto relative bg-neutral-950 border-t border-white/5 pt-16 pb-8 text-left">
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         
         {/* Top footer row */}
@@ -19,16 +19,14 @@ export default function Footer() {
           
           {/* Brand/Column 1 (5 cols) */}
           <div className="md:col-span-5 space-y-4">
-            <a href="#" className="flex items-center gap-2 group w-fit">
-              <div className="p-2 rounded-lg bg-neon-green/15 text-neon-green">
-                <Dumbbell className="w-5 h-5 rotate-[-45deg]" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display font-black text-xl tracking-tight text-white leading-none">
-                  WANDRI LOPES
-                </span>
-                <span className="text-[9px] font-mono tracking-widest text-neutral-400 font-bold uppercase leading-none mt-0.5">SISTEMA ELITE</span>
-              </div>
+            <a href="#" className="flex items-center gap-3 group w-fit focus:outline-none">
+              <img 
+                src="https://i.ibb.co/5h5kFgH5/Design-sem-nome.png" 
+                alt="Wandri Lopes — Mentoria Elite" 
+                className="h-11 md:h-12 w-auto max-w-[210px] object-contain transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
+              />
             </a>
             
             <p className="text-neutral-400 text-xs leading-relaxed max-w-sm">

@@ -52,11 +52,11 @@ export default function Pricing({ onOpenAssessment }: PricingProps) {
   return (
     <section 
       id="pricing_section" 
-      className="relative py-16 sm:py-24 bg-white border-y border-neutral-200 overflow-hidden"
+      className="content-auto relative py-16 sm:py-24 bg-white border-y border-neutral-200 overflow-hidden"
     >
-      {/* Background soft ambient lights */}
-      <div className="absolute top-[40%] right-[-10%] w-[350px] h-[350px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-[20%] left-[-15%] w-[400px] h-[400px] bg-blue-400/5 blur-[140px] rounded-full pointer-events-none" />
+      {/* Background soft ambient lights (hidden on mobile) */}
+      <div className="hidden md:block absolute top-[40%] right-[-10%] w-[350px] h-[350px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="hidden md:block absolute bottom-[20%] left-[-15%] w-[400px] h-[400px] bg-blue-400/5 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         

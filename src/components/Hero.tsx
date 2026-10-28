@@ -19,6 +19,9 @@ export default function Hero({ onOpenAssessment, onScrollToStories }: HeroProps)
           src="/src/assets/images/gym_hero_bg_1792437025109.jpg" 
           alt="Academia de musculação e treinamento de alta performance" 
           referrerPolicy="no-referrer"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
           className="w-full h-full object-cover object-center scale-100 filter brightness-[0.70] contrast-[1.08] saturate-[1.15]"
         />
         {/* Soft atmospheric tint - keeps the gym clearly visible while ensuring text readability */}
@@ -32,9 +35,9 @@ export default function Hero({ onOpenAssessment, onScrollToStories }: HeroProps)
         <div className="absolute bottom-0 inset-x-0 h-36 bg-gradient-to-t from-[#080808] via-[#080808]/60 to-transparent" />
       </div>
 
-      {/* Background Neon ambient meshes */}
-      <div className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] md:w-[600px] md:h-[600px] bg-neon-green/10 blur-[120px] rounded-full pointer-events-none select-none z-0" />
-      <div className="absolute bottom-[20%] right-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-neon-green/5 blur-[150px] rounded-full pointer-events-none select-none z-0" />
+      {/* Background Neon ambient meshes (hidden on mobile for 60fps scrolling, rendered on desktop) */}
+      <div className="hidden md:block absolute top-[10%] left-[-10%] w-[600px] h-[600px] bg-neon-green/10 blur-[120px] rounded-full pointer-events-none select-none z-0" />
+      <div className="hidden md:block absolute bottom-[20%] right-[-10%] w-[500px] h-[500px] bg-neon-green/5 blur-[150px] rounded-full pointer-events-none select-none z-0" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -105,7 +108,10 @@ export default function Hero({ onOpenAssessment, onScrollToStories }: HeroProps)
                   src="https://i.ibb.co/DHqmZfWc/JEE-2360.jpg" 
                   alt="Elite Personal Trainer" 
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover scale-[1.01] hover:scale-105 transition-all duration-1000 object-top filter saturate-[1.1]"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
+                  className="w-full h-full object-cover scale-[1.01] hover:scale-105 transition-transform duration-700 object-top filter saturate-[1.1]"
                 />
                 
                 {/* Immersive overlay gradient */}

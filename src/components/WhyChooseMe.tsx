@@ -34,7 +34,7 @@ export default function WhyChooseMe() {
   return (
     <section 
       id="why_choose_me_section" 
-      className="relative py-12 sm:py-20 md:py-24 bg-[#060606] border-b border-white/10"
+      className="content-auto relative py-12 sm:py-20 md:py-24 bg-[#060606] border-b border-white/10"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         
@@ -95,8 +95,8 @@ export default function WhyChooseMe() {
           {/* Right Side Visual Group Media Frame */}
           <div className="lg:col-span-5 relative flex justify-center items-center">
             
-            {/* Ambient Background glow layer */}
-            <div className="absolute inset-0 bg-neon-green/5 blur-[80px] rounded-full pointer-events-none z-0" />
+            {/* Ambient Background glow layer (hidden on mobile for instant rendering) */}
+            <div className="hidden md:block absolute inset-0 bg-neon-green/5 blur-[80px] rounded-full pointer-events-none z-0" />
 
             <div className="relative w-full max-w-[280px] xs:max-w-[325px] sm:max-w-[360px] md:max-w-[420px] aspect-[4/5] z-10 mx-auto">
               
@@ -107,6 +107,8 @@ export default function WhyChooseMe() {
                   src="https://i.ibb.co/zVj9spt9/JEE-2333.jpg" 
                   alt="Wandri Lopes Mentoria Diferenciada" 
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover scale-[1.01] hover:scale-105 transition-transform duration-700 object-center filter saturate-[1.1]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
