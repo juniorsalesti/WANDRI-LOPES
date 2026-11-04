@@ -9,27 +9,27 @@ export default function HowItWorks() {
   const steps: TimelineItem[] = [
     {
       step: '01',
-      title: 'Avaliação Inicial Completa',
-      subtitle: 'ANÁLISE BIOMECÂNICA, POSTURAL & METABÓLICA',
-      description: 'Iniciamos com uma varredura completa da sua rotina e biologia. Você responderá nossa anamnese e nos enviará suas medidas corporais, restrições alimentares, histórico de dores e vídeos de mobilidade/execução para conhecermos perfeitamente sua estrutura.'
+      title: 'Primeiro, Vamos Conhecer Você',
+      subtitle: 'AVALIAÇÃO & ANAMNESE INICIAL',
+      description: 'Antes de começar, avaliamos suas medidas, histórico de treinos, saúde, hábitos alimentares, rotina e objetivos para entender seu ponto de partida e organizar seu acompanhamento.'
     },
     {
       step: '02',
-      title: 'Criação do Plano de Elite',
-      subtitle: 'SEU DIRENCIONAMENTO BIOLÓGICO DE EVOLUÇÃO',
-      description: 'O Wandri planeja seu método personalizado para as próximas 12 semanas. Isso inclui as divisões musculares exatas, seleção de exercícios mapeados para suas articulações, contagem exata e dinâmica de carboidratos, proteínas, gorduras e planejador alimentar.'
+      title: 'Montamos Seu Planejamento',
+      subtitle: 'ESTRUTURAÇÃO PERSONALIZADA',
+      description: 'Organizamos seu treino e acompanhamento nutricional de acordo com seus objetivos, experiência e disponibilidade.'
     },
     {
       step: '03',
-      title: 'Ajustes e Auditorias Semanais',
-      subtitle: 'CALIBRAÇÃO DINÂMICA DE PROGRAMAÇÃO',
-      description: 'Semanalmente, você preenche seu formulário de evolução relatando peso, treinos cumpridos, cansaço acumulado e fotos. O Wandri avalia tudo e grava um vídeo exclusivo ajustando seus treinos ou alimentação para garantir foco absoluto e zero estagnação.'
+      title: 'Acompanhamos Sua Evolução',
+      subtitle: 'MONITORAMENTO & AJUSTES CONTÍNUOS',
+      description: 'Monitoramos seu progresso ao longo do acompanhamento e realizamos ajustes no planejamento conforme suas necessidades.'
     },
     {
       step: '04',
-      title: 'Suporte Diário Ativo',
-      subtitle: 'CONEXÃO DIRETA COM SEU TREINADOR',
-      description: 'Converse de forma rápida e sem restrições com o Wandri nos canais internos da mentoria. Envie seus vídeos de exercícios pesados diretamente do salão de musculação e receba correções imediatas de técnica e segurança biomecânica.'
+      title: 'Você Conta Com Nosso Suporte',
+      subtitle: 'CANAL DIRETO & ORIENTAÇÃO',
+      description: 'Você recebe orientações, pode tirar dúvidas e conta com suporte durante todo o acompanhamento.'
     }
   ];
 
@@ -107,9 +107,9 @@ export default function HowItWorks() {
                           {item.step}
                         </span>
                         <div className="p-2 bg-blue-50 rounded-lg text-blue-600">
-                          {idx === 0 && <Cpu className="w-5 h-5 text-blue-600" />}
-                          {idx === 1 && <Sparkles className="w-5 h-5 text-blue-600" />}
-                          {idx === 2 && <Sliders className="w-5 h-5 text-blue-600" />}
+                          {idx === 0 && <ClipboardList className="w-5 h-5 text-blue-600" />}
+                          {idx === 1 && <Sliders className="w-5 h-5 text-blue-600" />}
+                          {idx === 2 && <TrendingUp className="w-5 h-5 text-blue-600" />}
                           {idx === 3 && <Headset className="w-5 h-5 text-blue-600" />}
                         </div>
                       </div>

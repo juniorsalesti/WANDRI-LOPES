@@ -1,23 +1,19 @@
 import React from 'react';
-import { Award, ShieldCheck, Heart, Dumbbell, Star, ChevronRight, Check } from 'lucide-react';
-import { PremiumCoachData } from '../types';
+import { Award, ShieldCheck, Star } from 'lucide-react';
 
 export default function AboutCoach() {
-  const coachData: PremiumCoachData = {
+  const coachData = {
     name: 'Wandri Lopes',
-    title: 'Arquiteto Físico de Elite & Especialista em Cinesiologia Aplicada',
-    experienceYears: 8,
-    philosophy: 'O desenvolvimento físico de elite é uma fórmula científica exata. Ao isolar a biomecânica estrutural de cada articulação, mapear respostas hormonais progressivas e planejar macronutrientes flexíveis, geramos resultados fisiológicos consolidados para toda a vida. Eu não trabalho com adivinhações. Nós avaliamos, medimos, refinamos e evoluímos de forma constante.',
+    title: 'Profissional de Educação Física & Bodybuilding Coach',
     credentials: [
-      'Treinador e Personal Certificado',
-      'Especialista em Nutrição de Performance',
-      'Treinador Certificado em Biomecânica de Exercícios Baseada em Evidências',
-      'Especialista em Fortalecimento e Recuperação Funcional'
+      'Personal Trainer Certificado',
+      'Treinador Certificado em Biomecânica e Exercício',
+      'Especialista em Hipertrofia e Emagrecimento',
+      'Pós-graduado em Bodybuilding Coach'
     ],
     metrics: [
-      { label: 'ANOS DE COACHING', value: '8+ Anos' },
-      { label: 'ALUNOS MUTADOS', value: '520+' },
-      { label: 'SUPORTE INDIVIDUAL', value: '100%' }
+      { label: 'De experiência profissional.', value: '+8 ANOS' },
+      { label: 'Planejamento adaptado aos objetivos e às necessidades de cada aluno.', value: '100% INDIVIDUAL' }
     ]
   };
 
@@ -61,7 +57,7 @@ export default function AboutCoach() {
                     <span className="text-white font-display font-extrabold text-sm uppercase block tracking-tight">Coach Wandri Lopes</span>
                   </div>
                   <div className="bg-neon-green/20 text-neon-green p-1 px-2.5 rounded border border-neon-green/30 text-[10px] font-mono font-bold">
-                    ISSA ELITE
+                    BODYBUILDING COACH
                   </div>
                 </div>
                 
@@ -82,31 +78,45 @@ export default function AboutCoach() {
           </div>
 
           {/* Right Column: Narrative Biography & Credentials */}
-          <div className="lg:col-span-7 space-y-6 md:space-y-8 text-left">
+          <div className="lg:col-span-7 space-y-6 text-left">
             
             <div className="space-y-4">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neon-green/10 border border-neon-green/20">
                 <Award className="w-3.5 h-3.5 text-neon-green" />
-                <span className="text-[10px] md:text-xs font-mono font-bold tracking-widest text-neon-green uppercase">CONHEÇA SEU MENTOR</span>
+                <span className="text-[10px] md:text-xs font-mono font-bold tracking-widest text-neon-green uppercase">O ARQUITETO DO SEU CORPO</span>
               </div>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight uppercase">
-                O ARQUITETO DO <br className="hidden sm:inline" />
-                <span className="text-gradient-neon font-black">SEU CORPO</span>
+                CONHEÇA O PROFISSIONAL <br className="hidden sm:inline" />
+                <span className="text-gradient-neon font-black">POR TRÁS DO SEU ACOMPANHAMENTO</span>
               </h2>
-              <span className="font-display font-bold text-neutral-300 text-sm md:text-base block tracking-tight leading-relaxed">
-                {coachData.title}
-              </span>
             </div>
 
-            {/* Narrative / Philosophy */}
-            <p className="text-neutral-400 text-sm leading-relaxed text-balance">
-              {coachData.philosophy}
-            </p>
+            {/* Narrative paragraphs */}
+            <div className="space-y-3.5 text-neutral-300 text-sm md:text-base leading-relaxed">
+              <p>
+                Sou profissional de Educação Física há mais de 8 anos, pós-graduado em Bodybuilding Coach, com atuação especializada em hipertrofia, emagrecimento e preparação de atletas.
+              </p>
+              <p>
+                Minha metodologia é fundamentada no conhecimento técnico, na experiência profissional e na individualidade de cada aluno.
+              </p>
+              <p>
+                Compreendo que o desenvolvimento físico envolve diferentes fatores e que cada pessoa apresenta necessidades, características e respostas específicas ao treinamento.
+              </p>
+              <p>
+                Por isso, meu trabalho consiste em desenvolver estratégias individualizadas, considerando os objetivos, a condição física, a rotina e a evolução de cada aluno.
+              </p>
+            </div>
 
-            {/* Certifications and credentials list */}
-            <div className="space-y-3.5">
+            {/* Key quote banner */}
+            <div className="p-3.5 sm:p-4 rounded-xl bg-neon-green/10 border border-neon-green/30 text-neon-green font-display font-extrabold text-sm sm:text-base tracking-wide uppercase flex items-center gap-2.5">
+              <div className="w-2 h-2 rounded-full bg-neon-green shrink-0 animate-pulse" />
+              <span>Mais do que treinar, aprenda a treinar.</span>
+            </div>
+
+            {/* Certifications and qualifications list */}
+            <div className="space-y-3.5 pt-2">
               <span className="text-xs font-mono font-bold text-neutral-400 tracking-wider uppercase block">
-                SÓLIDAS CERTIFICAÇÕES INTERNACIONAIS
+                MINHAS QUALIFICAÇÕES
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {coachData.credentials.map((cred, idx) => (
@@ -121,15 +131,15 @@ export default function AboutCoach() {
             </div>
 
             {/* Performance metrics dashboard cells */}
-            <div className="grid grid-cols-3 gap-4 py-4 pt-6 border-t border-white/5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4 pt-6 border-t border-white/5">
               {coachData.metrics.map((cell, idx) => (
-                <div key={idx} className="p-3 bg-white/[0.01] border border-white/5 rounded-xl space-y-1">
-                  <span className="font-mono text-xl md:text-2xl font-black text-white block tracking-tight">
+                <div key={idx} className="p-4 bg-white/[0.02] border border-white/10 rounded-xl space-y-1.5">
+                  <span className="font-mono text-2xl sm:text-3xl font-black text-white block tracking-tight">
                     {cell.value}
                   </span>
-                  <span className="text-[9px] text-neutral-500 font-bold uppercase tracking-wider block leading-tight">
+                  <p className="text-xs text-neutral-400 font-medium leading-normal">
                     {cell.label}
-                  </span>
+                  </p>
                 </div>
               ))}
             </div>

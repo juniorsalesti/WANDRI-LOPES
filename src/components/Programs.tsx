@@ -14,10 +14,22 @@ export default function Programs({ onOpenAssessment }: ProgramsProps) {
     subtitle: "PROTOCOLO REVOLUCIONÁRIO DE DEFINIÇÃO E HIPERTROFIA SECANTE",
     description: "Método premium desenvolvido do zero para profissionais, empresários e atletas que buscam uma redução agressiva de gordura, densidade de massa magra e ganho de força real sem perder horas preciosas do seu dia.",
     features: [
-      { title: "Periodização Biomecânica", desc: "Progressões científicas de treino pensadas para blindar articulações e construir massa muscular densa." },
-      { title: "Otimização Hormonal Nativa", desc: "Estruturas de macronutrientes focadas em estender a disposição física e picos naturais de testosterona." },
-      { title: "Aceleradores Lipídicos", desc: "Ciclo de carboidratos estratégico que força o corpo a estocar glicogênio e incinerar a gordura abdominal." },
-      { title: "Calibração de Tempo de Foco", desc: "Sessões dinâmicas de 35 a 50 minutos planejadas com precisão milimétrica para altos resultados." }
+      { 
+        title: "Treino feito para você", 
+        desc: "Um planejamento de treino pensado para seus objetivos, sua experiência e suas necessidades." 
+      },
+      { 
+        title: "Alimentação alinhada aos seus objetivos", 
+        desc: "Acompanhamento nutricional personalizado, considerando sua rotina e o que você busca alcançar." 
+      },
+      { 
+        title: "Acompanhamento de perto", 
+        desc: "Orientação, suporte para dúvidas e ajustes nos treinos conforme sua evolução." 
+      },
+      { 
+        title: "Treino que cabe na sua rotina", 
+        desc: "Organização dos treinos de acordo com seu tempo e sua disponibilidade, para facilitar a constância." 
+      }
     ]
   };
 
@@ -142,8 +154,8 @@ export default function Programs({ onOpenAssessment }: ProgramsProps) {
                   <div key={idx} className="flex gap-3.5 items-start text-left">
                     <div className="p-2 rounded-lg bg-blue-50 text-blue-600 shrink-0 mt-0.5 border border-blue-100">
                       {idx === 0 && <Dumbbell className="w-4 h-4" />}
-                      {idx === 1 && <Target className="w-4 h-4" />}
-                      {idx === 2 && <Apple className="w-4 h-4" />}
+                      {idx === 1 && <Apple className="w-4 h-4" />}
+                      {idx === 2 && <Target className="w-4 h-4" />}
                       {idx === 3 && <Calendar className="w-4 h-4" />}
                     </div>
                     <div>

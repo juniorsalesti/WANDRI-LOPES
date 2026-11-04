@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Dumbbell, Apple, LineChart, MessageSquare, ChevronDown, Check, Zap } from 'lucide-react';
+import { Dumbbell, Apple, MessageSquare, Clock, ChevronDown, Check, Zap } from 'lucide-react';
 import { BenefitCard } from '../types';
 
 export default function Benefits() {
@@ -9,50 +9,50 @@ export default function Benefits() {
   const benefits: BenefitCard[] = [
     {
       id: 'training',
-      title: 'Plano de Treino Personalizado',
-      metricHeadline: 'Personalização Biomecânica',
-      description: 'Seus treinos são estruturados do zero para se adaptarem à sua estrutura física, limitações e nível atual. Nada de fichas prontas ou treinos genéricos de gaveta.',
+      title: 'Treino feito para você',
+      metricHeadline: 'Pilar 01 • Individualidade',
+      description: 'Um planejamento de treino pensado para seus objetivos, sua experiência e suas necessidades.',
       details: [
-        'Seleção de exercícios ideal focando na sua estrutura',
-        'Progressão de carga e faixas de repetições inteligentes',
-        'Biblioteca de exercícios guiada com vídeos em alta definição',
-        'Fichas adaptáveis para academia convencional, estúdios ou em casa'
+        'Seleção precisa de exercícios focando na sua estrutura física e objetivos',
+        'Progressão inteligente de cargas e repetições calculadas para sua evolução',
+        'Biblioteca de exercícios guiada com vídeos em alta definição de execução',
+        'Fichas adaptáveis para academia comercial, estúdios ou treino em casa'
       ]
     },
     {
       id: 'nutrition',
-      title: 'Estratégia Nutricional Flexível',
-      metricHeadline: 'Dieta sem Restrições Absurdas',
-      description: 'Alcance excelente definição física e queima de gordura sem abandonar os alimentos que você gosta. Criamos padrões alimentares integrados à sua rotina social.',
+      title: 'Alimentação alinhada aos seus objetivos',
+      metricHeadline: 'Pilar 02 • Nutrição Estratégica',
+      description: 'Acompanhamento nutricional personalizado, considerando sua rotina e o que você busca alcançar.',
       details: [
-        'Divisão precisa de macronutrientes recalculada e ajustada semanalmente',
-        'Guia completo e lista detalhada de substituição de alimentos',
-        'Estratégias científicas para jantares fora, eventos e rotina social',
-        'Foco na saúde digestiva, disposição e otimização hormonal'
-      ]
-    },
-    {
-      id: 'reviews',
-      title: 'Feedbacks Semanais de Progresso',
-      metricHeadline: 'Recalibração Metabólica Dinâmica',
-      description: 'Toda semana analisamos seu progresso através de fotos, pesagem diária e monitoramento de cargas para ajustar suas calorias e calorias gastas, quebrando qualquer platô.',
-      details: [
-        'Monitoramento de bio-feedbacks cruciais (sono, estresse e fadiga)',
-        'Vídeo personalizado semanal detalhando alterações na dieta e treino',
-        'Ajustes finos no metabolismo com base nas respostas do corpo',
-        'Análise postural e recomendações para correções funcionais'
+        'Acompanhamento nutricional personalizado sem restrições insustentáveis',
+        'Divisão precisa de calorias e macronutrientes alinhada à sua rotina',
+        'Guia completo e lista prática de substituição inteligente de alimentos',
+        'Estratégias flexíveis para jantares fora, viagens e eventos sociais'
       ]
     },
     {
       id: 'support',
-      title: 'Suporte Direto e Individual',
-      metricHeadline: 'Canal Direto Sem Intermediários',
-      description: 'Você nunca estará sozinho nessa caminhada. Tenha contato direto via chat com o treinador Wandri para tirar dúvidas imediatas e mandar vídeos das execuções.',
+      title: 'Acompanhamento de perto',
+      metricHeadline: 'Pilar 03 • Suporte Ativo',
+      description: 'Orientação, suporte para dúvidas e ajustes nos treinos conforme sua evolução.',
       details: [
-        'Respostas e orientações completas em poucas horas',
-        'Análises e correções de movimentos enviadas por vídeo',
-        'Alertas de metas diárias que sustentam sua consistência',
-        'Trabalho de mentalidade para blindar seus hábitos no longo prazo'
+        'Contato direto e orientação contínua com o treinador para tirar dúvidas',
+        'Análises e correções detalhadas de técnica e biomecânica por vídeo',
+        'Ajustes dinâmicos de volume e intensidade para evitar platôs',
+        'Acompanhamento constante para garantir seu foco, motivação e consistência'
+      ]
+    },
+    {
+      id: 'routine',
+      title: 'Treino que cabe na sua rotina',
+      metricHeadline: 'Pilar 04 • Constância & Praticidade',
+      description: 'Organização dos treinos de acordo com seu tempo e sua disponibilidade, para facilitar a constância.',
+      details: [
+        'Planejamento de treinos adaptado ao tempo que você realmente tem disponível',
+        'Divisões semanais realistas e flexíveis (de 3 a 6 dias na semana)',
+        'Métodos eficientes para máximo resultado sem horas exaustivas na academia',
+        'Construção de hábitos sustentáveis para facilitar a constância a longo prazo'
       ]
     }
   ];
@@ -72,14 +72,14 @@ export default function Benefits() {
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 shadow-sm">
             <Zap className="w-3.5 h-3.5 text-blue-600" />
-            <span className="text-[10px] md:text-xs font-mono font-bold tracking-widest text-blue-700 uppercase">ECOSSISTEMA COMPLETO DE TRANSFORMAÇÃO</span>
+            <span className="text-[10px] md:text-xs font-mono font-bold tracking-widest text-blue-700 uppercase">OS 4 PILARES DA METODOLOGIA</span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-900 uppercase">
-            Tudo o Que Você Precisa <br className="hidden sm:inline" />
-            <span className="bg-gradient-to-r from-neutral-950 to-[#2563eb] bg-clip-text text-transparent font-black">Para Avançar</span>
+            Os Quatro Pilares <br className="hidden sm:inline" />
+            <span className="bg-gradient-to-r from-neutral-950 to-[#2563eb] bg-clip-text text-transparent font-black">Da Nossa Metodologia</span>
           </h2>
           <p className="text-neutral-600 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-            Elimine as tentativas fracassadas. Esse método une fisiologia, musculação inteligente e responsabilidade diária para lapidar sua melhor versão.
+            Elimine as tentativas sem resultado. Uma metodologia desenhada para transformar seu corpo com inteligência, sustentabilidade e acompanhamento contínuo.
           </p>
         </div>
 
@@ -109,8 +109,8 @@ export default function Benefits() {
                   }`}>
                     {benefit.id === 'training' && <Dumbbell className="w-6 h-6" />}
                     {benefit.id === 'nutrition' && <Apple className="w-6 h-6" />}
-                    {benefit.id === 'reviews' && <LineChart className="w-6 h-6" />}
                     {benefit.id === 'support' && <MessageSquare className="w-6 h-6" />}
+                    {benefit.id === 'routine' && <Clock className="w-6 h-6" />}
                   </div>
 
                   <div className="space-y-1.5 flex-1">

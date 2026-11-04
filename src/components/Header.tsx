@@ -32,10 +32,10 @@ export default function Header({ onOpenAssessment }: HeaderProps) {
   }, []);
 
   const navLinks = [
-    { name: 'Benefícios', href: '#benefits_section' },
+    { name: 'Metodologia', href: '#benefits_section' },
     { name: 'Resultados', href: '#results_section' },
     { name: 'Programas', href: '#programs_section' },
-    { name: 'Método', href: '#why_choose_me_section' },
+    { name: 'Diferenciais', href: '#why_choose_me_section' },
     { name: 'Como Funciona', href: '#timeline_section' },
     { name: 'Sobre o Coach', href: '#about_coach_section' },
     { name: 'Planos', href: '#pricing_section' },
