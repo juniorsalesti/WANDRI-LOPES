@@ -38,6 +38,7 @@ export default function Header({ onOpenAssessment }: HeaderProps) {
     { name: 'Diferenciais', href: '#why_choose_me_section' },
     { name: 'Como Funciona', href: '#timeline_section' },
     { name: 'Sobre o Coach', href: '#about_coach_section' },
+    { name: 'Atletas', href: '#athletes_section' },
     { name: 'Planos', href: '#pricing_section' },
   ];
 
@@ -75,14 +76,14 @@ export default function Header({ onOpenAssessment }: HeaderProps) {
           </a>
 
           {/* Large display desktop nav links */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
             {navLinks.map((link) => (
               <a
                 id={`nav_${link.name.toLowerCase().replace(/ /g, '_')}`}
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className="text-sm font-medium text-neutral-400 hover:text-neon-green transition-colors relative py-1.5 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-neon-green after:transition-all hover:after:w-full"
+                className="text-sm font-medium text-neutral-400 hover:text-neon-green transition-colors relative py-1.5 whitespace-nowrap shrink-0 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-neon-green after:transition-all hover:after:w-full"
               >
                 {link.name}
               </a>

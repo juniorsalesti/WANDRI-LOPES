@@ -7,6 +7,7 @@ import Programs from './components/Programs';
 import WhyChooseMe from './components/WhyChooseMe';
 import HowItWorks from './components/HowItWorks';
 import AboutCoach from './components/AboutCoach';
+import AthletesShowcase from './components/AthletesShowcase';
 import Pricing from './components/Pricing';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
@@ -62,14 +63,17 @@ export default function App() {
       
       {/* Section 7 - about coach bio */}
       <AboutCoach />
+
+      {/* Section 8 - athletes showcase */}
+      <AthletesShowcase />
       
-      {/* Section 8 - pricing package rates */}
+      {/* Section 9 - pricing package rates */}
       <Pricing onOpenAssessment={() => handleOpenAssessment()} />
       
-      {/* Section 9 - final converting cta call to action */}
+      {/* Section 10 - final converting cta call to action */}
       <FinalCTA onOpenAssessment={() => handleOpenAssessment()} />
       
-      {/* Section 10 - sitemaps, credits & policies */}
+      {/* Section 11 - sitemaps, credits & policies */}
       <Footer />
 
       {/* Full-screen high-converting custom assessment modal */}

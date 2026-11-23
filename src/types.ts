@@ -60,3 +60,15 @@ export interface PremiumCoachData {
     value: string;
   }[];
 }
+
+export interface AthleteItem {
+  id: string;
+  name: string;
+  category: string;
+  phase: 'competicao' | 'preparacao';
+  phaseLabel: string;
+  highlight: string;
+  image: string;
+  alt: string;
+}
+
